@@ -1,14 +1,33 @@
 {
   "name": "tic-tac-toe",
   "version": "0.1.0",
+  "description": "Tic-tac-toe 3x3 built with react and redux.",
   "private": true,
+  "homepage": "http:///john-d-pelingo.github.io/tic-tac-toe",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-d-pelingo/tic-tac-toe.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "es6",
+    "jsx",
+    "react",
+    "redux",
+    "immutable"
+  ],
+  "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
+  "license": "MIT",
   "dependencies": {
+    "immutable": "3.8.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "5.0.3",
     "redux": "3.6.0"
   },
   "devDependencies": {
+    "del-cli": "0.2.1",
     "eslint": "3.18.0",
     "eslint-config-airbnb": "14.1.0",
     "eslint-plugin-import": "2.2.0",
@@ -22,6 +41,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint -c .eslintrc.yml *.js src"
+    "clean": "del-cli build",
+    "lint": "eslint -c .eslintrc.yml *.js src",
+    "deploy": "npm run clean && npm run build && gh-pages -d build"
   }
 }
