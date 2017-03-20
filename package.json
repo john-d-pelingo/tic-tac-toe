@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Tic-tac-toe 3x3 built with react and redux.",
   "private": true,
-  "homepage": "http:///john-d-pelingo.github.io/tic-tac-toe",
+  "homepage": "https://john-d-pelingo.github.io/tic-tac-toe",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/john-d-pelingo/tic-tac-toe.git"
