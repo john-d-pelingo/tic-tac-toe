@@ -1,8 +1,9 @@
-import App from './App';
-
-const dummy = '';
+import Cross from './Cross';
+import Nought from './Nought';
+import Square from './Square';
 
 export {
-    App,
-    dummy
+    Cross,
+    Nought,
+    Square
 };
