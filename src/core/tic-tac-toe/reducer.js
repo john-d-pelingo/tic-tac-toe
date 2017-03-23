@@ -1,24 +1,23 @@
 /* eslint-disable no-unused-vars */
 
-import { Map } from 'immutable';
+import { Record } from 'immutable';
 
 import { CROSS } from '../constants';
 
 import * as actionTypes from './action-types';
 
-export const initialState = new Map({
-    draw: false,
+export const TicTacToeState = new Record({
+    end: false,
     moves: 0,
-    turn: CROSS,
-    won: false
+    player: CROSS
 });
 
-export function ticTacToeReducer(state = initialState, { payload, type }) {
+export function ticTacToeReducer(state = new TicTacToeState(), { payload, type }) {
     switch (type) {
         case actionTypes.PLAY:
             return state;
         case actionTypes.RESTART:
-            return initialState;
+            return new TicTacToeState();
         default:
             return state;
     }
