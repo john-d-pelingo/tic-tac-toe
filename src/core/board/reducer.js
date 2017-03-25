@@ -18,7 +18,8 @@ export function boardReducer(state = boardState, { payload, type }) {
                     .set(payload.columnIndex, payload.symbol)
             );
 
-        case actionTypes.RESTART:
+        case actionTypes.NEXT_ROUND:
+        case actionTypes.RESTART_GAME:
             return boardState;
 
         default:

@@ -1,33 +1,15 @@
+/* eslint-disable import/prefer-default-export */
+
 import * as actionTypes from './action-types';
-import * as selectors from './selectors';
 
-export function fillSquare(data) {
+export function restartGame() {
     return {
-        type: actionTypes.FILL_SQUARE,
-        payload: data
+        type: actionTypes.RESTART_GAME
     };
 }
 
-export function restart() {
+export function nextRound() {
     return {
-        type: actionTypes.RESTART
+        type: actionTypes.NEXT_ROUND
     };
 }
-
-export function play(columnIndex, rowIndex, symbol) {
-    return (dispatch, getState) => {
-        const currentState = getState();
-
-        // If the round has not ended proceed with filling the square.
-        if (!selectors.getRoundHasEnded(currentState)) {
-            return dispatch(fillSquare({ columnIndex, rowIndex, symbol }));
-        }
-
-        return 1;
-    };
-}
-
-// TODO: Logic of winning.
-// function checkBoard() {
-//
-// }

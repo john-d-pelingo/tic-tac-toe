@@ -5,7 +5,7 @@ import logo from './images/logo.svg';
 import './style.css';
 
 const propTypes = {
-    children: React.PropTypes.object.isRequired
+    children: React.PropTypes.array.isRequired
 };
 
 class App extends Component {
@@ -13,9 +13,9 @@ class App extends Component {
         const { children } = this.props;
 
         return (
-            <div className="App">
-                <div className="App-header">
-                    <img src={ logo } className="App-logo" alt="logo" />
+            <div className="app">
+                <div className="app-header">
+                    <img src={ logo } className="app-logo" alt="logo" />
                     <h2>Welcome!</h2>
                 </div>
                 <main>{ children }</main>

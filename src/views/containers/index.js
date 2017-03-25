@@ -1,3 +1,9 @@
 import Board from './Board';
+import Message from './Message';
+import Scores from './Scores';
 
-export default Board;
+export {
+    Board,
+    Message,
+    Scores
+};

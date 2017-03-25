@@ -5,15 +5,18 @@ import { Provider } from 'react-redux';
 
 import configureStore from './core/store';
 import App from './views/app';
-import Board from './views/containers';
+import { Board, Message, Scores } from './views/containers';
 
 import './index.css';
 
 const store = configureStore();
 
+// TODO: Styling.
 ReactDOM.render(
     <Provider store={ store }>
         <App>
+            <Message />
+            <Scores />
             <Board />
         </App>
     </Provider>,

@@ -1,9 +1,13 @@
+.row {
+    display : flex;
+}
+
 .symbol {
-    background-color: white;
-    border: 1px solid black;
-    height: 60px;
-    margin: 1px;
-    -webkit-transition: background-color .5s ease;
-    transition: background-color .5s ease;
-    width: 60px;
+    background-color   : white;
+    border             : 1px solid black;
+    height             : 60px;
+    margin             : 1px;
+    -webkit-transition : background-color .5s ease;
+    transition         : background-color .5s ease;
+    width              : 60px;
 }

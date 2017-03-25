@@ -1,2 +1,7 @@
-export const FILL_SQUARE = 'FILL_SQUARE';
-export const RESTART = 'RESTART';
+export {
+    DECLARE_DRAW,
+    DECLARE_WINNER,
+    NEXT_ROUND,
+    FILL_SQUARE,
+    RESTART_GAME
+} from '../common-actions';

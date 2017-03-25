@@ -1,10 +1,23 @@
-export default function getBoard(state) {
+export function getBoard(state) {
+    return state.board;
+}
+export function getBoardAsObjAndArr(state) {
     // Transform Immutable Map with Lists inside to Object with Arrays inside.
-    const objState = state.board.toObject();
-    return Object.keys(objState).reduce(function (final, rowIndex) {
+    const boardObj = getBoard(state).toObject();
+    return Object.keys(boardObj).reduce(function (final, rowIndex) {
         return {
             ...final,
-            [rowIndex]: objState[rowIndex].toArray()
+            [rowIndex]: boardObj[rowIndex].toArray()
         };
     }, {});
+}
+
+export function getLongBoard(state) {
+    const boardAsObjAndArr = getBoardAsObjAndArr(state);
+    return Object.keys(boardAsObjAndArr).reduce(function (partialBoard, rowIndex) {
+        return [
+            ...partialBoard,
+            ...boardAsObjAndArr[rowIndex]
+        ];
+    }, []);
 }
