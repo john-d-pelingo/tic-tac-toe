@@ -1,62 +1,43 @@
-/* eslint-disable react/no-array-index-key */
+/* eslint-disable
+ react/no-array-index-key,
+ react/jsx-no-bind
+ */
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import {
-    Cross,
-    Nought,
-    Square
-} from '../../components';
-
-import {
-    ticTacToeActions,
-    ticTacToeSelectors
-} from '../../../core/tic-tac-toe';
-
-import {
-    getBoard
-} from '../../../core/board';
-
-import {
-    CROSS,
-    NOUGHT
-} from '../../../core/constants';
+import { Cross, Nought, Square } from '../../components';
+import { ticTacToeActions, ticTacToeSelectors } from '../../../core/tic-tac-toe';
+import { getBoard } from '../../../core/board';
+import { CROSS, NOUGHT } from '../../../core/constants';
 
 import './style.css';
 
 const propTypes = {
     board: React.PropTypes.object.isRequired,
+    currentPlayer: React.PropTypes.string.isRequired,
     play: React.PropTypes.func.isRequired,
     roundHasEnded: React.PropTypes.bool.isRequired
 };
 
 class Board extends React.Component {
-    constructor(props) {
-        super(props);
-        this.play = this.play.bind(this);
-    }
-
-    play(rowIndex, position, symbol) {
-        if (!this.props.roundHasEnded) this.props.play(rowIndex, position, symbol);
-    }
-
     render() {
         const renderRows = () => {
-            const { board } = this.props;
+            const { board, play, currentPlayer, roundHasEnded } = this.props;
 
-            return Object.keys(board).map(function (rowIndex, index) {
+            return Object.keys(board).map((rowIndex, index) => {
                 return (
                     <div className={ `row row-${ rowIndex }` } key={ index }>
                         {
-                            board[rowIndex].map(function (symbol, position) {
+                            board[rowIndex].map((symbol, columnIndex) => {
                                 switch (symbol) {
                                     case CROSS:
-                                        return (<Cross key={ position } />);
+                                        return (<Cross key={ columnIndex } />);
                                     case NOUGHT:
-                                        return (<Nought key={ position } />);
+                                        return (<Nought key={ columnIndex } />);
                                     default:
-                                        return (<Square key={ position } />);
+                                        return (<Square key={ columnIndex } play={ roundHasEnded ? () => {} : play.bind(null, columnIndex, rowIndex) } currentPlayer={ currentPlayer } />);
                                 }
                             })
                         }
@@ -76,10 +57,11 @@ class Board extends React.Component {
 Board.propTypes = propTypes;
 
 const mapStateToProps = createSelector(
+    ticTacToeSelectors.getCurrentPlayer,
     ticTacToeSelectors.getRoundHasEnded,
     getBoard,
-    (roundHasEnded, board) => ({
-        roundHasEnded, board
+    (currentPlayer, roundHasEnded, board) => ({
+        currentPlayer, roundHasEnded, board
     })
 );
 

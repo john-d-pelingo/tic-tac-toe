@@ -1,11 +1,15 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import React from 'react';
 
-const propTypes = {};
+const propTypes = {
+    currentPlayer: React.PropTypes.string.isRequired,
+    play: React.PropTypes.func.isRequired
+};
 
-const Square = () => (
-    <div className="symbol square">
+const Square = ({ currentPlayer, play }) => (
+    <div className="symbol square" onClick={ () => play(currentPlayer) }>
     </div>
-
 );
 
 Square.propTypes = propTypes;

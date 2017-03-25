@@ -1,9 +1,10 @@
 import { applyMiddleware, compose, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
 import reducers from './reducers';
 
 export default (initialState = {}) => {
-    let middleware = applyMiddleware();
+    let middleware = applyMiddleware(thunk);
 
     if (process.env.NODE_ENV === 'development') {
         // Configure redux-devtools-extension

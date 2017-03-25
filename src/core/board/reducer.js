@@ -4,18 +4,23 @@ import { List, Map, Repeat } from 'immutable';
 
 import * as actionTypes from './action-types';
 
-export const initialState = new Map({
+export const boardState = new Map({
     0: List(Repeat('', 3)),
     1: List(Repeat('', 3)),
     2: List(Repeat('', 3))
 });
 
-export function boardReducer(state = initialState, { payload, type }) {
+export function boardReducer(state = boardState, { payload, type }) {
     switch (type) {
-        case actionTypes.PLAY:
-            return state;
+        case actionTypes.FILL_SQUARE:
+            return state.set(payload.rowIndex,
+                state.get(payload.rowIndex)
+                    .set(payload.columnIndex, payload.symbol)
+            );
+
         case actionTypes.RESTART:
-            return initialState;
+            return boardState;
+
         default:
             return state;
     }

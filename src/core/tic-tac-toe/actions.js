@@ -1,8 +1,10 @@
 import * as actionTypes from './action-types';
+import * as selectors from './selectors';
 
-export function play() {
+export function fillSquare(data) {
     return {
-        type: actionTypes.PLAY
+        type: actionTypes.FILL_SQUARE,
+        payload: data
     };
 }
 
@@ -11,3 +13,21 @@ export function restart() {
         type: actionTypes.RESTART
     };
 }
+
+export function play(columnIndex, rowIndex, symbol) {
+    return (dispatch, getState) => {
+        const currentState = getState();
+
+        // If the round has not ended proceed with filling the square.
+        if (!selectors.getRoundHasEnded(currentState)) {
+            return dispatch(fillSquare({ columnIndex, rowIndex, symbol }));
+        }
+
+        return 1;
+    };
+}
+
+// TODO: Logic of winning.
+// function checkBoard() {
+//
+// }

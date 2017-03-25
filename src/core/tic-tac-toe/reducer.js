@@ -2,7 +2,7 @@
 
 import { Record } from 'immutable';
 
-import { CROSS } from '../constants';
+import { CROSS, NOUGHT } from '../constants';
 
 import * as actionTypes from './action-types';
 
@@ -14,10 +14,15 @@ export const TicTacToeState = new Record({
 
 export function ticTacToeReducer(state = new TicTacToeState(), { payload, type }) {
     switch (type) {
-        case actionTypes.PLAY:
-            return state;
+        case actionTypes.FILL_SQUARE:
+            return state.merge({
+                moves: state.moves + 1,
+                player: payload.symbol === CROSS ? NOUGHT : CROSS
+            });
+
         case actionTypes.RESTART:
             return new TicTacToeState();
+
         default:
             return state;
     }
