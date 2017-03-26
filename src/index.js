@@ -11,7 +11,8 @@ import './index.css';
 
 const store = configureStore();
 
-// TODO: Styling.
+// TODO: General styling.
+// TODO: Style squares based on spotted winner.
 ReactDOM.render(
     <Provider store={ store }>
         <App>

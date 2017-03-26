@@ -3,13 +3,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { ticTacToeActions, ticTacToeSelectors } from '../../../core/tic-tac-toe';
+import { ticTacToeActions, ticTacToeSelectors } from '../../core/tic-tac-toe';
 
+import { MessageText } from '../components';
 
 const propTypes = {
     roundEndedAsDraw: React.PropTypes.bool,
     currentPlayer: React.PropTypes.string.isRequired,
-    numberOfMoves: React.PropTypes.number.isRequired,
     winner: React.PropTypes.string,
 
     nextRound: React.PropTypes.func.isRequired,
@@ -21,7 +21,6 @@ const defaultProps = {
     winner: ''
 };
 
-// TODO: Try to use higher order components for the messages.
 class Message extends React.Component {
     constructor(props) {
         super(props);
@@ -41,35 +40,29 @@ class Message extends React.Component {
     }
 
     render() {
-        const { roundEndedAsDraw, currentPlayer, numberOfMoves, winner } = this.props;
+        // eslint-disable-next-line
+        const { nextRound, restartGame, roundEndedAsDraw, winner, ...restMessageProps } = this.props;
+
+        const handleNextRoundClick = this.handleNextRoundClick;
+        const handleRestartGameCLick = this.handleRestartGameCLick;
+
+        const toSpread = {
+            messageSpan: `It\u0027s ${ restMessageProps.currentPlayer }\u0027s turn.`,
+            handleNextRoundClick,
+            handleRestartGameCLick,
+            ...restMessageProps
+        };
+
         if (roundEndedAsDraw) {
-            return (
-                <div className="message">
-                    <span className="draw">Draw!</span>
-                    &nbsp;<a href="" onClick={ this.handleNextRoundClick }>Next round</a>
-                    &nbsp;<a href="" onClick={ this.handleRestartGameCLick }>New game</a>
-                </div>
-            );
+            toSpread.messageSpan = 'Draw!';
         }
 
         if (winner) {
-            return (
-                <div className="message">
-                    <span className="message">{ winner } won!</span>
-                    &nbsp;<a href="" onClick={ this.handleNextRoundClick }>Next round</a>
-                    &nbsp;<a href="" onClick={ this.handleRestartGameCLick }>New game</a>
-                </div>
-            );
+            toSpread.messageSpan = `${ winner } won!`;
         }
 
         return (
-            <div className="message">
-                <span className="message">It&apos;s { currentPlayer }&apos;s turn.</span>
-                &nbsp;
-                {
-                    numberOfMoves > 0 ? (<a href="" onClick={ this.handleRestartGameCLick }>New game</a>) : null
-                }
-            </div>
+            <MessageText { ...toSpread } />
         );
     }
 }
@@ -80,12 +73,10 @@ Message.defaultProps = defaultProps;
 const mapStateToProps = createSelector(
     ticTacToeSelectors.getRoundEndedAsDraw,
     ticTacToeSelectors.getCurrentPlayer,
-    ticTacToeSelectors.getNumberOfMoves,
     ticTacToeSelectors.getWinner,
-    (roundEndedAsDraw, currentPlayer, numberOfMoves, winner) => ({
+    (roundEndedAsDraw, currentPlayer, winner) => ({
         roundEndedAsDraw,
         currentPlayer,
-        numberOfMoves,
         winner
     })
 );
