@@ -4,6 +4,8 @@ import { createSelector } from 'reselect';
 
 import { scoresSelectors } from '../../../core/scores';
 
+import './style.css';
+
 const propTypes = {
     crossScore: React.PropTypes.number.isRequired,
     noughtScore: React.PropTypes.number.isRequired,

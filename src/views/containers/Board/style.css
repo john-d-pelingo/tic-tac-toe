@@ -1,13 +1,14 @@
 .row {
-    display : flex;
+    display         : flex;
+    justify-content : center;
 }
 
-.symbol {
+.row .symbol {
     background-color   : white;
     border             : 1px solid black;
     height             : 60px;
     margin             : 1px;
-    -webkit-transition : background-color .5s ease;
     transition         : background-color .5s ease;
+    -webkit-transition : background-color .5s ease;
     width              : 60px;
 }
