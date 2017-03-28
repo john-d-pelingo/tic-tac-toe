@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './style.css';
-
 const propTypes = {
     messageSpan: React.PropTypes.string.isRequired,
 

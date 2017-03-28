@@ -3,8 +3,6 @@
 import React, { Component } from 'react';
 import logo from './images/logo.svg';
 
-import './style.css';
-
 const propTypes = {
     children: React.PropTypes.array.isRequired
 };

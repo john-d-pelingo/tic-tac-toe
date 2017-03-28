@@ -18,6 +18,15 @@ export function getWinner(state) {
     return getTicTacToe(state).winner;
 }
 
+export function getWinningLayout(state) {
+    return getTicTacToe(state).winningLayout.reduce(function (partialArray, el) {
+        return [
+            ...partialArray,
+            el
+        ];
+    }, []);
+}
+
 export function getCurrentPlayer(state) {
     return getTicTacToe(state).player;
 }

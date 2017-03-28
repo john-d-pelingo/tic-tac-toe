@@ -13,7 +13,7 @@ export const ScoresState = new Record({
 export function scoresReducer(state = new ScoresState(), { payload, type }) {
     switch (type) {
         case actionTypes.DECLARE_WINNER:
-            return state.set(payload, state[payload] + 1);
+            return state.set(payload.winner, state[payload.winner] + 1);
 
         case actionTypes.DECLARE_DRAW:
             return state.set('draws', state.draws + 1);

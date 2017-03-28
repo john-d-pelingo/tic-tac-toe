@@ -11,6 +11,7 @@ export const TicTacToeState = new Record({
     end: false,
     moves: 0,
     winner: null,
+    winningLayout: [],
     player: CROSS
 });
 
@@ -24,10 +25,12 @@ export function ticTacToeReducer(state = new TicTacToeState(), { payload, type }
 
         case actionTypes.DECLARE_DRAW:
             return state.set('draw', true);
+
         case actionTypes.DECLARE_WINNER:
             return state.merge({
                 'end': true,
-                'winner': payload
+                'winner': payload.winner,
+                'winningLayout': payload.winningLayout
             });
 
         case actionTypes.NEXT_ROUND:

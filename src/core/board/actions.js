@@ -2,7 +2,14 @@
 
 import Immutable from 'immutable';
 
-import { BOARD_SIZE, CROSS, NOUGHT, WINNING_LAYOUTS } from '../../core/constants';
+import {
+    BOARD_SIZE,
+    CROSS,
+    NOUGHT,
+    WINNING_LAYOUTS,
+    WINNING_LAYOUTS_KEYS,
+    WINNING_LAYOUTS_LENGTH
+} from '../../core/constants';
 import { ticTacToeSelectors } from '../tic-tac-toe';
 
 import * as actionTypes from './action-types';
@@ -14,10 +21,13 @@ export function declareDraw() {
     };
 }
 
-export function declareWinner(winner) {
+export function declareWinner(winner, winningLayout) {
     return {
         type: actionTypes.DECLARE_WINNER,
-        payload: winner
+        payload: {
+            winner,
+            winningLayout
+        }
     };
 }
 
@@ -35,13 +45,14 @@ export function play(columnIndex, rowIndex, symbol) {
             dispatch(fillSquare({ columnIndex, rowIndex, symbol }));
 
             if (ticTacToeSelectors.getNumberOfMoves(getState()) > 4) {
-                switch (checkBoard(getLongBoard(getState()))) {
+                const check = checkBoard(getLongBoard(getState()));
+                switch (check.result) {
                     case 1:
                         return dispatch(declareDraw());
                     case 2:
-                        return dispatch(declareWinner(CROSS));
+                        return dispatch(declareWinner(CROSS, check.winningLayout));
                     case 3:
-                        return dispatch(declareWinner(NOUGHT));
+                        return dispatch(declareWinner(NOUGHT, check.winningLayout));
                     default:
                 }
             }
@@ -52,13 +63,16 @@ export function play(columnIndex, rowIndex, symbol) {
 }
 
 export function checkBoard(longBoard) {
-    // 0: game hasn't ended yet, continue to next player.
-    // 1: draw.
-    // 2: cross has won.
-    // 3: nought has won.
-    let checkResult = 0;
+    // 0: Game hasn't ended yet, continue to next player.
+    // 1: Draw.
+    // 2: Cross has won.
+    // 3: Nought has won.
+    const check = {
+        result: 0,
+        winningLayout: []
+    };
 
-    // Can use for instead of `reduce` for better performance.
+    // Can use `for` instead of `reduce` for better performance.
     const positions = longBoard.reduce(function (partialPositions, symbol, position) {
         switch (symbol) {
             case (CROSS):
@@ -85,24 +99,26 @@ export function checkBoard(longBoard) {
     const crossesPositionsSet = Immutable.Set(positions[CROSS]);
     const noughtsPositionsSet = Immutable.Set(positions[NOUGHT]);
 
-    for (let ii = 0; ii < WINNING_LAYOUTS.length; ii++) {
-        const winningLayoutSet = Immutable.Set(WINNING_LAYOUTS[ii]);
+    // `for` is better here since we don't wanna do a bunch of useless loops if we find the winner.
+    for (let ii = 0; ii < WINNING_LAYOUTS_LENGTH; ii++) {
+        const winningLayoutSet = Immutable.Set(WINNING_LAYOUTS[WINNING_LAYOUTS_KEYS[ii]]);
 
         if (crossesPositionsSet.intersect(winningLayoutSet).equals(winningLayoutSet)) {
-            checkResult = 2;
+            check.result = 2;
+            check.winningLayout = WINNING_LAYOUTS[WINNING_LAYOUTS_KEYS[ii]];
             break;
         }
 
         if (noughtsPositionsSet.intersect(winningLayoutSet).equals(winningLayoutSet)) {
-            checkResult = 3;
+            check.result = 3;
+            check.winningLayout = WINNING_LAYOUTS[WINNING_LAYOUTS_KEYS[ii]];
             break;
         }
     }
 
-    if (crossesPositionsSet.union(noughtsPositionsSet).size === BOARD_SIZE
-        && checkResult === 0) {
-        checkResult = 1;
+    if (crossesPositionsSet.union(noughtsPositionsSet).size === BOARD_SIZE && check.result === 0) {
+        check.result = 1;
     }
 
-    return checkResult;
+    return check;
 }

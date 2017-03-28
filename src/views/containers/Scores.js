@@ -2,9 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { scoresSelectors } from '../../../core/scores';
-
-import './style.css';
+import { scoresSelectors } from '../../core/scores';
 
 const propTypes = {
     crossScore: React.PropTypes.number.isRequired,
