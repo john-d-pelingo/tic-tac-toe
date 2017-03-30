@@ -7,7 +7,7 @@ import { CROSS, NOUGHT } from '../constants';
 import * as actionTypes from './action-types';
 
 export const TicTacToeState = new Record({
-    draw: false,
+    draw: null,
     end: false,
     moves: 0,
     winner: null,

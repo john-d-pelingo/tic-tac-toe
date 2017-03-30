@@ -58,7 +58,7 @@ class Message extends React.Component {
         }
 
         if (winner) {
-            toSpread.messageSpan = `${ winner } won!`;
+            toSpread.messageSpan = `${ winner } won this round!`;
         }
 
         return (

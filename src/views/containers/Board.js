@@ -16,6 +16,7 @@ const propTypes = {
     board: React.PropTypes.object.isRequired,
     currentPlayer: React.PropTypes.string.isRequired,
     roundEnded: React.PropTypes.bool.isRequired,
+    roundEndedAsDraw: React.PropTypes.bool,
     winner: React.PropTypes.string,
     winningLayout: React.PropTypes.array.isRequired,
 
@@ -23,6 +24,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+    roundEndedAsDraw: false,
     winner: ''
 };
 
@@ -30,7 +32,7 @@ const defaultProps = {
 class Board extends React.Component {
     render() {
         const renderRows = () => {
-            const { board, play, currentPlayer, roundEnded, winner, winningLayout } = this.props;
+            const { board, play, currentPlayer, roundEnded, roundEndedAsDraw, winner, winningLayout } = this.props;
 
             return Object.keys(board).map((rowIndex, index) => {
                 return (
@@ -39,9 +41,9 @@ class Board extends React.Component {
                             board[rowIndex].map((symbol, columnIndex) => {
                                 switch (symbol) {
                                     case CROSS:
-                                        return (<Cross key={ columnIndex } winner={ winner === symbol && winningLayout.includes(((rowIndex * 3) + columnIndex)) } />);
+                                        return (<Cross key={ columnIndex } roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === symbol && winningLayout.includes(((rowIndex * 3) + columnIndex)) } />);
                                     case NOUGHT:
-                                        return (<Nought key={ columnIndex } winner={ winner === symbol && winningLayout.includes(((rowIndex * 3) + columnIndex)) } />);
+                                        return (<Nought key={ columnIndex } roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === symbol && winningLayout.includes(((rowIndex * 3) + columnIndex)) } />);
                                     default:
                                         return (<Square key={ columnIndex } play={ roundEnded ? () => {} : play.bind(null, columnIndex, rowIndex) } currentPlayer={ currentPlayer } />);
                                 }
@@ -67,10 +69,11 @@ const mapStateToProps = createSelector(
     boardSelectors.getBoardAsObjAndArr,
     ticTacToeSelectors.getCurrentPlayer,
     ticTacToeSelectors.getRoundEnded,
+    ticTacToeSelectors.getRoundEndedAsDraw,
     ticTacToeSelectors.getWinner,
     ticTacToeSelectors.getWinningLayout,
-    (board, currentPlayer, roundEnded, winner, winningLayout) => ({
-        board, currentPlayer, roundEnded, winner, winningLayout
+    (board, currentPlayer, roundEnded, roundEndedAsDraw, winner, winningLayout) => ({
+        board, currentPlayer, roundEnded, roundEndedAsDraw, winner, winningLayout
     })
 );
 

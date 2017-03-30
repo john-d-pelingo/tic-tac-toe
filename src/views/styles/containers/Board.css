@@ -1,0 +1,8 @@
+.board {
+    padding-bottom : 20px;
+}
+
+.row {
+    display         : flex;
+    justify-content : center;
+}

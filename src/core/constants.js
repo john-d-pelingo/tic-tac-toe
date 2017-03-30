@@ -1,7 +1,7 @@
 export const BOARD_SIZE = 9;
 
-export const CROSS = 'X';
-export const NOUGHT = 'O';
+export const CROSS = 'Android';
+export const NOUGHT = 'iOS';
 
 export const DEFAULT_COLOR = '#000';
 export const ANDROID_COLOR = '#a4c639';

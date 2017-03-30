@@ -9,9 +9,6 @@
 
 .app-header {
     background-color : #222;
-    color            : white;
-    height           : 150px;
-    padding          : 20px;
 }
 
 .app-intro {
@@ -27,4 +24,13 @@ main {
     margin     : 0 auto;
     max-width  : 600px;
     min-height : 500px;
+}
+
+@media screen and (max-width : 999px) {
+    /* Up to 999px the below will have effect. */
+    main {
+        width : 100%;
+        max-width : 100%;
+        padding : 0 20px;
+    }
 }
