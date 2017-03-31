@@ -1,21 +1,31 @@
 {
   "name": "tic-tac-toe",
-  "version": "0.1.0",
-  "description": "Tic-tac-toe 3x3 built with react and redux.",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
+  "private": false,
   "homepage": "https://john-d-pelingo.github.io/tic-tac-toe",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/john-d-pelingo/tic-tac-toe.git"
   },
   "keywords": [
-    "html",
+    "airbnb-javascipt",
+    "create-react-app",
     "css",
     "es6",
+    "eslint",
+    "eslint-config",
+    "gh-pages",
+    "html",
+    "immutable",
     "jsx",
     "react",
+    "react-dom",
+    "react-redux",
+    "rect-scripts",
     "redux",
-    "immutable"
+    "redux-thunk",
+    "reselect"
   ],
   "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
   "license": "MIT",
