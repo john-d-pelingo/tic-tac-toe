@@ -1,6 +1,6 @@
-/* eslint-disable react/prefer-stateless-function */
-
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
+
 import logo from './images/logo.svg';
 
 const propTypes = {
@@ -8,6 +8,14 @@ const propTypes = {
 };
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+
+        ReactGA.initialize('UA-70753213-2');
+        // This just needs to be called once since we have no routes in this case.
+        ReactGA.pageview(window.location.pathname);
+    }
+
     render() {
         const { children } = this.props;
 
