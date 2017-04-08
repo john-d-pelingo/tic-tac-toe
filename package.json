@@ -1,6 +1,6 @@
 {
   "name": "tic-tac-toe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
   "homepage": "https://john-d-pelingo.github.io/tic-tac-toe",
@@ -21,6 +21,7 @@
     "jsx",
     "react",
     "react-dom",
+    "react-ga",
     "react-redux",
     "rect-scripts",
     "redux",
@@ -31,8 +32,8 @@
   "license": "MIT",
   "dependencies": {
     "immutable": "3.8.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "15.5.3",
+    "react-dom": "15.5.3",
     "react-ga": "2.1.2",
     "react-redux": "5.0.3",
     "redux": "3.6.0",
@@ -41,7 +42,7 @@
   },
   "devDependencies": {
     "del-cli": "0.2.1",
-    "eslint": "3.18.0",
+    "eslint": "3.19.0",
     "eslint-config-airbnb": "14.1.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "4.0.0",
