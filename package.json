@@ -4,12 +4,23 @@
   "description": "Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
   "homepage": "https://john-d-pelingo.github.io/tic-tac-toe",
+  "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/john-d-pelingo/tic-tac-toe.git"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "clean": "del-cli build",
+    "lint": "eslint -c .eslintrc.yml *.js src",
+    "deploy": "npm run clean && npm run build && gh-pages -d build"
+  },
   "keywords": [
-    "airbnb-javascipt",
+    "airbnb-javascript",
     "create-react-app",
     "css",
     "es6",
@@ -28,8 +39,6 @@
     "redux-thunk",
     "reselect"
   ],
-  "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
-  "license": "MIT",
   "dependencies": {
     "immutable": "3.8.1",
     "react": "15.5.3",
@@ -49,14 +58,5 @@
     "eslint-plugin-react": "6.10.1",
     "gh-pages": "0.12.0",
     "react-scripts": "0.9.5"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "clean": "del-cli build",
-    "lint": "eslint -c .eslintrc.yml *.js src",
-    "deploy": "npm run clean && npm run build && gh-pages -d build"
   }
 }
