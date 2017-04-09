@@ -1,6 +1,6 @@
 {
   "name": "tic-tac-toe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
   "homepage": "https://john-d-pelingo.github.io/tic-tac-toe",
@@ -12,12 +12,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run clean && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "clean": "del-cli build",
     "lint": "eslint -c .eslintrc.yml *.js src",
-    "deploy": "npm run clean && npm run build && gh-pages -d build"
+    "deploy": "npm run lint && npm run build && gh-pages -d build"
   },
   "keywords": [
     "airbnb-javascript",
@@ -41,6 +41,7 @@
   ],
   "dependencies": {
     "immutable": "3.8.1",
+    "prop-types": "15.5.6",
     "react": "15.5.3",
     "react-dom": "15.5.3",
     "react-ga": "2.1.2",

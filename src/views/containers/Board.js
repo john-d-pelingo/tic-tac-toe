@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -13,14 +14,14 @@ import { boardActions, boardSelectors } from '../../core/board';
 import { CROSS, NOUGHT } from '../../core/constants';
 
 const propTypes = {
-    board: React.PropTypes.object.isRequired,
-    currentPlayer: React.PropTypes.string.isRequired,
-    roundEnded: React.PropTypes.bool.isRequired,
-    roundEndedAsDraw: React.PropTypes.bool,
-    winner: React.PropTypes.string,
-    winningLayout: React.PropTypes.array.isRequired,
+    board: PropTypes.object.isRequired,
+    currentPlayer: PropTypes.string.isRequired,
+    roundEnded: PropTypes.bool.isRequired,
+    roundEndedAsDraw: PropTypes.bool,
+    winner: PropTypes.string,
+    winningLayout: PropTypes.array.isRequired,
 
-    play: React.PropTypes.func.isRequired
+    play: PropTypes.func.isRequired
 };
 
 const defaultProps = {

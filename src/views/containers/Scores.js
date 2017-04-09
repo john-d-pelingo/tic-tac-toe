@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -8,11 +9,11 @@ import { ticTacToeSelectors } from '../../core/tic-tac-toe';
 import { Cross, Nought } from '../components';
 
 const propTypes = {
-    crossScore: React.PropTypes.number.isRequired,
-    noughtScore: React.PropTypes.number.isRequired,
-    drawScore: React.PropTypes.number.isRequired,
-    roundEndedAsDraw: React.PropTypes.bool,
-    winner: React.PropTypes.string
+    crossScore: PropTypes.number.isRequired,
+    noughtScore: PropTypes.number.isRequired,
+    drawScore: PropTypes.number.isRequired,
+    roundEndedAsDraw: PropTypes.bool,
+    winner: PropTypes.string
 };
 
 const defaultProps = {

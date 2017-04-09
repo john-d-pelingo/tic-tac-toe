@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const propTypes = {
-    messageSpan: React.PropTypes.string.isRequired,
+    messageSpan: PropTypes.string.isRequired,
 
-    handleNextRoundClick: React.PropTypes.func.isRequired,
-    handleRestartGameCLick: React.PropTypes.func.isRequired
+    handleNextRoundClick: PropTypes.func.isRequired,
+    handleRestartGameCLick: PropTypes.func.isRequired
 };
 
 const MessageText = ({ handleNextRoundClick, handleRestartGameCLick, messageSpan }) => (

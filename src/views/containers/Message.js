@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -8,12 +9,12 @@ import { ticTacToeActions, ticTacToeSelectors } from '../../core/tic-tac-toe';
 import { MessageText } from '../components';
 
 const propTypes = {
-    roundEndedAsDraw: React.PropTypes.bool,
-    currentPlayer: React.PropTypes.string.isRequired,
-    winner: React.PropTypes.string,
+    roundEndedAsDraw: PropTypes.bool,
+    currentPlayer: PropTypes.string.isRequired,
+    winner: PropTypes.string,
 
-    nextRound: React.PropTypes.func.isRequired,
-    restartGame: React.PropTypes.func.isRequired
+    nextRound: PropTypes.func.isRequired,
+    restartGame: PropTypes.func.isRequired
 };
 
 const defaultProps = {

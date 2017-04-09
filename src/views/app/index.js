@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 
 import logo from './images/logo.svg';
 
 const propTypes = {
-    children: React.PropTypes.array.isRequired
+    children: PropTypes.array.isRequired
 };
 
 class App extends Component {

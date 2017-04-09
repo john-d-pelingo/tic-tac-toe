@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { DEFAULT_COLOR, ANDROID_COLOR, APPLE_COLOR } from '../../core/constants';
 
 const propTypes = {
-    winner: React.PropTypes.bool,
-    roundEndedAsDraw: React.PropTypes.bool
+    winner: PropTypes.bool,
+    roundEndedAsDraw: PropTypes.bool
 };
 
 const defaultProps = {

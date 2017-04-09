@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const propTypes = {
-    currentPlayer: React.PropTypes.string.isRequired,
-    play: React.PropTypes.func.isRequired
+    currentPlayer: PropTypes.string.isRequired,
+    play: PropTypes.func.isRequired
 };
 
 const Square = ({ currentPlayer, play }) => (
