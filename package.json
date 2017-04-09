@@ -6,18 +6,22 @@
   "homepage": "https://john-d-pelingo.github.io/tic-tac-toe",
   "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/john-d-pelingo/tic-tac-toe/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/john-d-pelingo/tic-tac-toe.git"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "npm run clean && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
     "clean": "del-cli build",
+    "build": "react-scripts build",
+    "deploy": "npm run build && gh-pages -d build",
+    "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml *.js src",
-    "deploy": "npm run lint && npm run build && gh-pages -d build"
+    "prebuild": "run-s clean lint",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
   },
   "keywords": [
     "airbnb-javascript",
