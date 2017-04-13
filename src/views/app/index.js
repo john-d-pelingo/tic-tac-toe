@@ -2,19 +2,25 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 
-import logo from './images/logo.svg';
+import logo from '../images/logo.svg';
 
 const propTypes = {
     children: PropTypes.array.isRequired
+};
+
+const defaultProps = {
+    children: []
 };
 
 class App extends Component {
     constructor(props) {
         super(props);
 
-        ReactGA.initialize('UA-70753213-2');
-        // This just needs to be called once since we have no routes in this case.
-        ReactGA.pageview(window.location.pathname);
+        if (process.env.NODE_ENV !== 'test') {
+            ReactGA.initialize('UA-70753213-2');
+            // This just needs to be called once since we have no routes in this case.
+            ReactGA.pageview(window.location.pathname);
+        }
     }
 
     render() {
@@ -32,5 +38,6 @@ class App extends Component {
 }
 
 App.propTypes = propTypes;
+App.defaultProps = defaultProps;
 
 export default App;

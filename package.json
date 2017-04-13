@@ -19,9 +19,9 @@
     "deploy": "npm run build && gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml *.js src",
-    "prebuild": "run-s clean lint",
+    "prebuild": "run-s clean lint test",
     "start": "react-scripts start",
-    "test": "react-scripts test --env=jsdom"
+    "test": "cross-env CI=true react-scripts test --env=jsdom"
   },
   "keywords": [
     "airbnb-javascript",
@@ -55,6 +55,7 @@
     "reselect": "2.5.4"
   },
   "devDependencies": {
+    "cross-env": "4.0.0",
     "del-cli": "0.2.1",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "14.1.0",

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { Provider } from 'react-redux';
 
 import configureStore from './core/store';
@@ -10,20 +9,19 @@ import { Board, Message, Scores } from './views/containers';
 // Base styles.
 import './views/styles/index.css';
 
-// Main App CSS.
+// Main App styles.
 import './views/styles/app/App.css';
 
-// Containers CSS.
+// Containers styles.
 import './views/styles/containers/Board.css';
 import './views/styles/containers/Scores.css';
 
-// Components CSS.
+// Components styles.
 import './views/styles/components/MessageText.css';
 import './views/styles/components/Symbol.css';
 
 const store = configureStore();
 
-// TODO: General styling.
 // TODO: Ability to add custom username.
 ReactDOM.render(
     <Provider store={ store }>
