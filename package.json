@@ -1,7 +1,7 @@
 {
   "name": "tic-tac-toe",
   "version": "1.0.2",
-  "description": "Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
+  "description": "Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react, redux and friends. Bootstrapped with the help of Facebook's create-react-app.",
   "private": false,
   "homepage": "https://john-d-pelingo.github.io/tic-tac-toe",
   "author": "John Darryl Pelingo <johndarrylpelingo@gmail.com> (https://github.com/john-d-pelingo)",
@@ -19,9 +19,10 @@
     "deploy": "npm run build && gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml *.js src",
-    "prebuild": "run-s clean lint test",
+    "prebuild": "run-s clean lint test:deploy",
     "start": "react-scripts start",
-    "test": "cross-env CI=true react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "test:deploy": "cross-env CI=true react-scripts test --env=jsdom"
   },
   "keywords": [
     "airbnb-javascript",
@@ -38,8 +39,9 @@
     "react-dom",
     "react-ga",
     "react-redux",
-    "rect-scripts",
+    "react-scripts",
     "redux",
+    "redux-devtools-extension",
     "redux-thunk",
     "reselect"
   ],
@@ -52,7 +54,8 @@
     "react-redux": "5.0.3",
     "redux": "3.6.0",
     "redux-thunk": "2.2.0",
-    "reselect": "2.5.4"
+    "reselect": "2.5.4",
+    "shortid": "2.2.8"
   },
   "devDependencies": {
     "cross-env": "4.0.0",

@@ -29,8 +29,12 @@ main {
 @media screen and (max-width : 999px) {
     /* Up to 999px the below will have effect. */
     main {
-        width : 100%;
+        width     : 100%;
         max-width : 100%;
-        padding : 0 20px;
+        padding   : 0 20px;
+    }
+
+    .app-header {
+        padding : 40px 0;
     }
 }

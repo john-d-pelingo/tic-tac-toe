@@ -1,5 +1,4 @@
 /* eslint-disable
- react/no-array-index-key,
  react/jsx-no-bind
  */
 
@@ -7,6 +6,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import shortid from 'shortid';
 
 import { Cross, Nought, Square } from '../components';
 import { ticTacToeSelectors } from '../../core/tic-tac-toe';
@@ -35,18 +35,18 @@ class Board extends React.Component {
         const renderRows = () => {
             const { board, play, currentPlayer, roundEnded, roundEndedAsDraw, winner, winningLayout } = this.props;
 
-            return Object.keys(board).map((rowIndex, index) => {
+            return Object.keys(board).map(rowIndex => {
                 return (
-                    <div className={ `row row-${ rowIndex }` } key={ index }>
+                    <div className={ `row row-${ rowIndex }` } key={ shortid.generate() }>
                         {
                             board[rowIndex].map((symbol, columnIndex) => {
                                 switch (symbol) {
                                     case CROSS:
-                                        return (<Cross key={ columnIndex } roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === symbol && winningLayout.includes(((rowIndex * 3) + columnIndex)) } />);
+                                        return (<Cross key={ shortid.generate() } roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === symbol && winningLayout.includes(((rowIndex * 3) + columnIndex)) } />);
                                     case NOUGHT:
-                                        return (<Nought key={ columnIndex } roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === symbol && winningLayout.includes(((rowIndex * 3) + columnIndex)) } />);
+                                        return (<Nought key={ shortid.generate() } roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === symbol && winningLayout.includes(((rowIndex * 3) + columnIndex)) } />);
                                     default:
-                                        return (<Square key={ columnIndex } play={ roundEnded ? () => {} : play.bind(null, columnIndex, rowIndex) } currentPlayer={ currentPlayer } />);
+                                        return (<Square key={ shortid.generate() } play={ roundEnded ? () => {} : play.bind(null, columnIndex, rowIndex) } currentPlayer={ currentPlayer } />);
                                 }
                             })
                         }

@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 import * as actionTypes from './action-types';
 
 export function restartGame() {
