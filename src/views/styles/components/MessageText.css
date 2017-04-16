@@ -1,41 +1,41 @@
-.message {
+.message-text {
     padding-bottom : 20px;
 }
 
-.message .text {
+.message-text .text {
     display        : block;
     font           : 36px/40px Helvetica, Helvetica, sans-serif;
     padding-bottom : 20px;
 }
 
-.message .button-wrapper {
+.message-text .button-wrapper {
     padding-bottom : 20px;
 }
 
-.message .button {
+.message-text .button {
     font : 30px/32px Helvetica-Neue, Helvetica, sans-serif;
 }
 
-.message .button.next-game {
+.message-text .button.next-game {
     float : right;
 }
 
-.message .button.new-game {
+.message-text .button.new-game {
     float : left;
 }
 
 @media screen and (max-width : 549px) {
-    .message .text {
+    .message-text .text {
         padding-bottom : 10px;
     }
 
     /* Up to 549px the below will have effect. */
-    .message .button.next-game {
+    .message-text .button.next-game {
         display        : block;
         float          : none;
     }
 
-    .message .button.new-game {
+    .message-text .button.new-game {
         display        : block;
         float          : none;
     }

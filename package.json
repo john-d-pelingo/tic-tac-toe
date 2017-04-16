@@ -35,6 +35,7 @@
     "html",
     "immutable",
     "jsx",
+    "prop-types",
     "react",
     "react-dom",
     "react-ga",

@@ -9,7 +9,7 @@ const propTypes = {
 };
 
 const MessageText = ({ handleNextRoundClick, handleRestartGameCLick, messageSpan }) => (
-    <div className="message">
+    <div className="message-text">
         <span className="text">{ messageSpan }</span>
 
         <div className="button-wrapper clearfix">

@@ -1,16 +1,22 @@
 # tic-tac-toe
 
-Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.                                                 
+Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.
+                                                 
+Try the demo at [https://john-d-pelingo.github.io/tic-tac-toe/](https://john-d-pelingo.github.io/tic-tac-toe/).
 
 ## Stack
 
 - [x] Immutable
+- [x] Prop-Types
 - [x] React
+- [x] React-Dom
 - [x] React-Redux
 - [x] Redux
 - [x] Redux-Thunk
 - [x] Redux-Devtools-Extension for Chrome
 - [x] Reselect
+
+Alongside pure JavaScript.
 
 ## Installation
 

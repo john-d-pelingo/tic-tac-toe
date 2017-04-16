@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 import logo from '../images/logo.svg';
 
 const propTypes = {
-    children: PropTypes.array.isRequired
+    children: PropTypes.node.isRequired
 };
 
 const defaultProps = {
@@ -28,8 +28,8 @@ class App extends Component {
 
         return (
             <div className="app">
-                <div className="app-header">
-                    <img src={ logo } className="app-logo" alt="React" />
+                <div className="header">
+                    <img src={ logo } className="logo" alt="React" />
                 </div>
                 <main>{ children }</main>
             </div>

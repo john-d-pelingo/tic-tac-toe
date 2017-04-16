@@ -2,17 +2,9 @@
     text-align : center;
 }
 
-.app-logo {
+.app .logo {
     animation : app-logo-spin infinite 20s linear;
     height    : 80px;
-}
-
-.app-header {
-    background-color : #222;
-}
-
-.app-intro {
-    font-size : large;
 }
 
 @keyframes app-logo-spin {
@@ -20,21 +12,26 @@
     to { transform : rotate(360deg); }
 }
 
-main {
+.app .header {
+    background-color : #222;
+}
+
+.app main {
     margin     : 0 auto;
     max-width  : 600px;
     min-height : 500px;
+    padding    : 40px 0;
 }
 
 @media screen and (max-width : 999px) {
     /* Up to 999px the below will have effect. */
-    main {
-        width     : 100%;
-        max-width : 100%;
-        padding   : 0 20px;
+    .app .header {
+        padding : 40px 0;
     }
 
-    .app-header {
-        padding : 40px 0;
+    .app main {
+        max-width : 100%;
+        padding   : 20px;
+        width     : 100%;
     }
 }
