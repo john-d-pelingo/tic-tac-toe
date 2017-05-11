@@ -6,15 +6,33 @@ Try the demo at [https://john-d-pelingo.github.io/tic-tac-toe/](https://john-d-p
 
 ## Stack
 
-- [x] Immutable
-- [x] Prop-Types
-- [x] React
-- [x] React-Dom
-- [x] React-Redux
-- [x] Redux
-- [x] Redux-Thunk
-- [x] Redux-Devtools-Extension for Chrome
-- [x] Reselect
+- [x] immutable
+- [x] prop-types
+- [x] react
+- [x] react-dom
+- [x] react-redux
+- [x] redux
+- [x] redux-thunk
+- [x] redux-devtools-extension for Google Chrome
+- [x] reselect
+
+## Development Stack
+
+- [x] cross-env
+- [x] del-cli
+- [x] eslint
+- [x] gh-pages
+- [x] node-sass
+- [x] npm-run-all
+
+## Test Stack 
+
+- [x] enzyme
+- [x] jest
+
+## Utilities
+
+- [x] [shortid](https://github.com/dylang/shortid)
 
 Alongside pure JavaScript.
 
@@ -92,6 +110,17 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request! :D
+
+## TODO 
+
+- [ ] Complete tests for:
+  - [ ] Redux Logic
+    - [ ] Reducers
+    - [ ] Actions
+    - [ ] Selectors
+  - [ ] Containers
+  - [ ] Components
+- [ ] Add snapshot testing.  
 
 ## License
 

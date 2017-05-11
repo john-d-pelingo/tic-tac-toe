@@ -6,6 +6,9 @@ import configureStore from './core/store';
 import App from './views/app';
 import { Board, Message, Scores } from './views/containers';
 
+// Styles.
+// import './views/styles/style.css';
+
 // Base styles.
 import './views/styles/index.css';
 

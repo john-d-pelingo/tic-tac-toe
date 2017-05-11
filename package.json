@@ -14,15 +14,19 @@
     "url": "https://github.com/john-d-pelingo/tic-tac-toe.git"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "run-s build:js",
+    "build:css": "node-sass --output-style expanded --indent-width 4 --linefeed lf --include-path scss src/views/styles/style.scss src/views/styles/style.css",
+    "build:js": "react-scripts build",
     "clean": "del-cli build",
     "deploy": "npm run build && gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc.yml *.js src",
-    "prebuild": "run-s clean lint test:deploy",
-    "start": "react-scripts start",
+    "prebuild": "run-s build:css clean lint test:deploy",
+    "start": "run-p watch:css start:js",
+    "start:js": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
-    "test:deploy": "cross-env CI=true react-scripts test --env=jsdom"
+    "test:deploy": "cross-env CI=true react-scripts test --env=jsdom",
+    "watch:css": "nodemon -e scss -x \"npm run build:css\""
   },
   "keywords": [
     "airbnb-javascript",
@@ -51,23 +55,29 @@
     "prop-types": "15.5.6",
     "react": "15.5.3",
     "react-dom": "15.5.3",
-    "react-ga": "2.1.2",
+    "react-ga": "2.2.0",
     "react-redux": "5.0.3",
     "redux": "3.6.0",
     "redux-thunk": "2.2.0",
     "reselect": "2.5.4",
-    "shortid": "2.2.8"
+    "shortid": "2.2.8",
+    "sieses": "0.1.4"
   },
   "devDependencies": {
     "cross-env": "4.0.0",
     "del-cli": "0.2.1",
+    "enzyme": "2.8.2",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "14.1.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.10.1",
     "gh-pages": "0.12.0",
+    "node-sass": "4.5.2",
+    "nodemon": "1.11.0",
     "npm-run-all": "4.0.2",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "react-test-renderer": "15.5.4",
+    "redux-mock-store": "1.2.3"
   }
 }
