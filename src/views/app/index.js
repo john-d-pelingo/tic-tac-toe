@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ReactGA from 'react-ga';
 
 import logo from '../images/logo.svg';
 
@@ -17,6 +16,9 @@ class App extends Component {
         super(props);
 
         if (process.env.NODE_ENV !== 'test') {
+            // eslint-disable-next-line global-require
+            const ReactGA = require('react-ga');
+
             ReactGA.initialize('UA-70753213-2');
             // This just needs to be called once since we have no routes in this case.
             ReactGA.pageview(window.location.pathname);

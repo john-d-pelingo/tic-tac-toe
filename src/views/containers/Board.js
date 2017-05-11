@@ -30,14 +30,14 @@ const defaultProps = {
 };
 
 // TODO: Try to use higher order components for the squares.
-class Board extends React.Component {
+export class Board extends React.Component {
     render() {
         const renderRows = () => {
             const { board, play, currentPlayer, roundEnded, roundEndedAsDraw, winner, winningLayout } = this.props;
 
             return Object.keys(board).map(rowIndex => {
                 return (
-                    <div className={ `row row-${ rowIndex }` } key={ shortid.generate() }>
+                    <div className={ `row -${ rowIndex }` } key={ shortid.generate() }>
                         {
                             board[rowIndex].map((symbol, columnIndex) => {
                                 switch (symbol) {
@@ -82,4 +82,6 @@ const mapDispatchToProps = {
     play: boardActions.play
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Board);
+const BoardContainer = connect(mapStateToProps, mapDispatchToProps)(Board);
+
+export default BoardContainer;

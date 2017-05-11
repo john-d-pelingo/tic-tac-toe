@@ -1,18 +1,21 @@
 // Template
-//@import "~sieses/dist/sieses.css";
-@import "~sieses/dist/parts/reset.css";
-@import "~sieses/dist/parts/elements.css";
-@import "~sieses/dist/parts/template.css";
+//@import '~sieses/dist/sieses.css';
+@import '~sieses/dist/parts/reset.css';
+@import '~sieses/dist/parts/elements.css';
+@import '~sieses/dist/parts/template.css';
+@import '~sieses/dist/parts/utilities.css';
 
 body {
     font-family : 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-//// Main App
-//@import "./app/App";
-//
-//// Components
-//@import "./components/ButtonChangeCase";
-//@import "./components/ButtonSubmit";
-//@import "./components/TextAreaForm";
-//@import "./components/TextInfo";
+// Main App
+@import './app/App';
+
+// Containers
+@import './containers/Board';
+@import './containers/Scores';
+
+// Components
+@import './components/MessageText';
+@import './components/Symbol';

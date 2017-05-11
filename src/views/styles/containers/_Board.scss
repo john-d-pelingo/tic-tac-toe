@@ -1,0 +1,40 @@
+.board {
+    padding-bottom : 20px;
+
+    > .row {
+        display         : flex;
+        justify-content : center;
+    }
+
+    @media screen and (max-width : 1199px) {
+        /* Up to 1199px the below will have effect. */
+        > .row > .symbol {
+            height : 100px;
+            width  : 100px;
+        }
+    }
+
+    @media screen and (max-width : 999px) {
+        /* Up to 999px the below will have effect. */
+        > .row > .symbol {
+            height : 125px;
+            width  : 125px;
+        }
+    }
+
+    @media screen and (max-width : 699px) {
+        /* Up to 699px the below will have effect. */
+        > .row > .symbol {
+            height : 150px;
+            width  : 150px;
+        }
+    }
+
+    @media screen and (max-width : 549px) {
+        /* Up to 549px the below will have effect. */
+        > .row > .symbol {
+            height : 85px;
+            width  : 85px;
+        }
+    }
+}

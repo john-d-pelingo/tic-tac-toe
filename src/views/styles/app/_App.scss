@@ -1,0 +1,38 @@
+.app {
+    text-align : center;
+
+    .logo {
+        animation : app-logo-spin infinite 20s linear;
+        height    : 80px;
+    }
+
+    .header {
+        background-color : #222;
+    }
+
+    main {
+        margin     : 0 auto;
+        max-width  : 600px;
+        min-height : 500px;
+        padding    : 40px 0;
+    }
+
+    @media screen and (max-width : 999px) {
+        /* Up to 999px the below will have effect. */
+        .header {
+            padding : 40px 0;
+        }
+
+        main {
+            max-width : 100%;
+            padding   : 20px;
+            width     : 100%;
+        }
+    }
+}
+
+@keyframes app-logo-spin {
+    from { transform : rotate(0deg); }
+    to { transform : rotate(360deg); }
+}
+

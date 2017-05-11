@@ -1,6 +1,206 @@
 @import url(~sieses/dist/parts/reset.css);
 @import url(~sieses/dist/parts/elements.css);
 @import url(~sieses/dist/parts/template.css);
+@import url(~sieses/dist/parts/utilities.css);
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.app {
+    text-align: center;
+}
+
+.app .logo {
+    animation: app-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.app .header {
+    background-color: #222;
+}
+
+.app main {
+    margin: 0 auto;
+    max-width: 600px;
+    min-height: 500px;
+    padding: 40px 0;
+}
+
+@media screen and (max-width: 999px) {
+    .app {
+        /* Up to 999px the below will have effect. */
+    }
+    .app .header {
+        padding: 40px 0;
+    }
+    .app main {
+        max-width: 100%;
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+@keyframes app-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.board {
+    padding-bottom: 20px;
+}
+
+.board > .row {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1199px) {
+    .board {
+        /* Up to 1199px the below will have effect. */
+    }
+    .board > .row > .symbol {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .board {
+        /* Up to 999px the below will have effect. */
+    }
+    .board > .row > .symbol {
+        height: 125px;
+        width: 125px;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .board {
+        /* Up to 699px the below will have effect. */
+    }
+    .board > .row > .symbol {
+        height: 150px;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 549px) {
+    .board {
+        /* Up to 549px the below will have effect. */
+    }
+    .board > .row > .symbol {
+        height: 85px;
+        width: 85px;
+    }
+}
+
+.scores {
+    padding-bottom: 20px;
+}
+
+.scores > .score {
+    display: inline-block;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.scores > .score > .number {
+    display: inline-block;
+    font-size: 30px;
+}
+
+.scores > .score > .number.-breathing {
+    animation: breathing infinite 3s linear;
+}
+
+.scores .symbol {
+    border: none;
+    display: inline-block;
+    height: 50px;
+    margin: 0;
+    vertical-align: middle;
+    width: 50px;
+}
+
+.scores .symbol > svg {
+    margin: 0;
+}
+
+@keyframes breathing {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.message-text {
+    padding-bottom: 20px;
+}
+
+.message-text > .text {
+    display: block;
+    font: 36px/40px Helvetica, Helvetica, sans-serif;
+    padding-bottom: 20px;
+}
+
+.message-text > .button-wrapper {
+    padding-bottom: 20px;
+}
+
+.message-text > .button-wrapper > .button {
+    font: 30px/32px 'Helvetica Neue';
+}
+
+.message-text > .button-wrapper > .button.-next-game {
+    float: right;
+}
+
+.message-text > .button-wrapper > .button.-new-game {
+    float: left;
+}
+
+@media screen and (max-width: 549px) {
+    .message-text {
+        /* Up to 549px the below will have effect. */
+    }
+    .message-text > .text {
+        padding-bottom: 10px;
+    }
+    .message-text > .button-wrapper > .button.-next-game {
+        display: block;
+        float: none;
+    }
+    .message-text > .button-wrapper > .button.-new-game {
+        display: block;
+        float: none;
+    }
+}
+
+.symbol {
+    background-color: white;
+    border: 1px solid black;
+    height: 75px;
+    margin: 1px;
+    transition: background-color .5s ease;
+    -webkit-transition: background-color .5s ease;
+    width: 75px;
+}
+
+.symbol > svg {
+    margin: 5px;
 }

@@ -1,0 +1,53 @@
+.scores {
+    padding-bottom : 20px;
+
+    > .score {
+        display    : inline-block;
+        padding    : 0 10px;
+        text-align : center;
+    }
+
+    > .score > .number {
+        display   : inline-block;
+        font-size : 30px;
+    }
+
+    > .score > .number.-breathing {
+        animation : breathing infinite 3s linear;
+    }
+
+    .symbol {
+        border         : none;
+        display        : inline-block;
+        height         : 50px;
+        margin         : 0;
+        vertical-align : middle;
+        width          : 50px;
+    }
+
+    .symbol > svg {
+        margin : 0;
+    }
+}
+
+@keyframes breathing {
+    0% {
+        transform : scale(1);
+    }
+
+    25% {
+        transform : scale(1.5);
+    }
+
+    50% {
+        transform : scale(1);
+    }
+
+    75% {
+        transform : scale(1.5);
+    }
+
+    100% {
+        transform : scale(1);
+    }
+}

@@ -22,7 +22,7 @@ const defaultProps = {
     winner: ''
 };
 
-class Message extends React.Component {
+export class Message extends React.Component {
     constructor(props) {
         super(props);
 
@@ -104,4 +104,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 //     };
 // }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Message);
+const MessageContainer = connect(mapStateToProps, mapDispatchToProps)(Message);
+
+export default MessageContainer;

@@ -9,7 +9,7 @@ const propTypes = {
 };
 
 const Square = ({ currentPlayer, play }) => (
-    <div className="symbol square" onClick={ () => play(currentPlayer) }>
+    <div className="symbol -square" onClick={ () => play(currentPlayer) }>
     </div>
 );
 

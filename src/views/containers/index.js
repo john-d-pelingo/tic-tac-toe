@@ -1,9 +1,9 @@
-import Board from './Board';
-import Message from './Message';
-import Scores from './Scores';
+import BoardContainer from './Board';
+import MessageContainer from './Message';
+import ScoresContainer from './Scores';
 
 export {
-    Board,
-    Message,
-    Scores
+    BoardContainer,
+    MessageContainer,
+    ScoresContainer
 };

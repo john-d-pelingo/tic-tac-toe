@@ -22,17 +22,17 @@ const defaultProps = {
 };
 
 // TODO: Try to use higher order components for the scores.
-const Scores = ({ crossScore, noughtScore, drawScore, roundEndedAsDraw, winner }) => {
+export const Scores = ({ crossScore, noughtScore, drawScore, roundEndedAsDraw, winner }) => {
     return (
         <div className="scores">
-            <div className="score cross">
-                <Cross roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === CROSS } /> <div className={ `number ${ crossScore > noughtScore ? `breathing` : '' }` }>{ crossScore }</div>
+            <div className="score -cross">
+                <Cross roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === CROSS } /> <div className={ `number ${ crossScore > noughtScore ? `-breathing` : '' }` }>{ crossScore }</div>
             </div>
-            <div className="score draw">
+            <div className="score -draw">
                 <span className="text">Draws:</span> <span className="number">{ drawScore }</span>
             </div>
-            <div className="score nought">
-                <Nought roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === NOUGHT } /> <div className={ `number ${ noughtScore > crossScore ? `breathing` : '' }` }>{ noughtScore }</div>
+            <div className="score -nought">
+                <Nought roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === NOUGHT } /> <div className={ `number ${ noughtScore > crossScore ? `-breathing` : '' }` }>{ noughtScore }</div>
             </div>
         </div>
     );
@@ -56,4 +56,6 @@ const mapStateToProps = createSelector(
     })
 );
 
-export default connect(mapStateToProps, null)(Scores);
+const ScoresContainer = connect(mapStateToProps, null)(Scores);
+
+export default ScoresContainer;

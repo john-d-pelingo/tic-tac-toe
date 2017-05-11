@@ -4,24 +4,10 @@ import { Provider } from 'react-redux';
 
 import configureStore from './core/store';
 import App from './views/app';
-import { Board, Message, Scores } from './views/containers';
+import { BoardContainer, MessageContainer, ScoresContainer } from './views/containers';
 
 // Styles.
-// import './views/styles/style.css';
-
-// Base styles.
-import './views/styles/index.css';
-
-// Main App styles.
-import './views/styles/app/App.css';
-
-// Containers styles.
-import './views/styles/containers/Board.css';
-import './views/styles/containers/Scores.css';
-
-// Components styles.
-import './views/styles/components/MessageText.css';
-import './views/styles/components/Symbol.css';
+import './views/styles/style.css';
 
 const store = configureStore();
 
@@ -29,9 +15,9 @@ const store = configureStore();
 ReactDOM.render(
     <Provider store={ store }>
         <App>
-            <Message />
-            <Scores />
-            <Board />
+            <MessageContainer />
+            <ScoresContainer />
+            <BoardContainer />
         </App>
     </Provider>,
     document.getElementById('root')
