@@ -113,6 +113,9 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 
 ## TODO 
 
+- [ ] Change redux store of ticTacToe to game.
+- [ ] Styling:
+  - [ ] Make SVG beside score "breath" too.
 - [ ] Complete tests for:
   - [ ] Redux Logic
     - [ ] Reducers

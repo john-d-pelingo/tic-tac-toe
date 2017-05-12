@@ -15,7 +15,6 @@ import { CROSS, NOUGHT } from '../../core/constants';
 
 const propTypes = {
     board: PropTypes.object.isRequired,
-    currentPlayer: PropTypes.string.isRequired,
     roundEnded: PropTypes.bool.isRequired,
     roundEndedAsDraw: PropTypes.bool,
     winner: PropTypes.string,
@@ -33,7 +32,7 @@ const defaultProps = {
 export class Board extends React.Component {
     render() {
         const renderRows = () => {
-            const { board, play, currentPlayer, roundEnded, roundEndedAsDraw, winner, winningLayout } = this.props;
+            const { board, play, roundEnded, roundEndedAsDraw, winner, winningLayout } = this.props;
 
             return Object.keys(board).map(rowIndex => {
                 return (
@@ -46,7 +45,7 @@ export class Board extends React.Component {
                                     case NOUGHT:
                                         return (<Nought key={ shortid.generate() } roundEndedAsDraw={ roundEndedAsDraw } winner={ winner === symbol && winningLayout.includes(((rowIndex * 3) + columnIndex)) } />);
                                     default:
-                                        return (<Square key={ shortid.generate() } play={ roundEnded ? () => {} : play.bind(null, columnIndex, rowIndex) } currentPlayer={ currentPlayer } />);
+                                        return (<Square key={ shortid.generate() } columnIndex={ columnIndex } rowIndex={ rowIndex / 1 } handleSquareClick={ roundEnded ? () => {} : play } />);
                                 }
                             })
                         }
@@ -68,13 +67,12 @@ Board.defaultProps = defaultProps;
 
 const mapStateToProps = createSelector(
     boardSelectors.getBoardAsObjAndArr,
-    ticTacToeSelectors.getCurrentPlayer,
     ticTacToeSelectors.getRoundEnded,
     ticTacToeSelectors.getRoundEndedAsDraw,
     ticTacToeSelectors.getWinner,
     ticTacToeSelectors.getWinningLayout,
-    (board, currentPlayer, roundEnded, roundEndedAsDraw, winner, winningLayout) => ({
-        board, currentPlayer, roundEnded, roundEndedAsDraw, winner, winningLayout
+    (board, roundEnded, roundEndedAsDraw, winner, winningLayout) => ({
+        board, roundEnded, roundEndedAsDraw, winner, winningLayout
     })
 );
 

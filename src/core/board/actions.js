@@ -38,11 +38,12 @@ export function fillSquare(data) {
     };
 }
 
-export function play(columnIndex, rowIndex, symbol) {
+export function play(columnIndex, rowIndex) {
     return (dispatch, getState) => {
         // If the round has not ended proceed with filling the square.
         if (!ticTacToeSelectors.getRoundEnded(getState())) {
-            dispatch(fillSquare({ columnIndex, rowIndex, symbol }));
+            const currentPlayer = ticTacToeSelectors.getCurrentPlayer(getState());
+            dispatch(fillSquare({ columnIndex, rowIndex, symbol: currentPlayer }));
 
             if (ticTacToeSelectors.getNumberOfMoves(getState()) > 4) {
                 const check = checkBoard(getLongBoard(getState()));
@@ -58,7 +59,7 @@ export function play(columnIndex, rowIndex, symbol) {
             }
         }
 
-        return 1;
+        return {};
     };
 }
 

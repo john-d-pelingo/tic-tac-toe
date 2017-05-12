@@ -13,8 +13,8 @@ export const boardState = new Map({
 export function boardReducer(state = boardState, { payload, type }) {
     switch (type) {
         case actionTypes.FILL_SQUARE:
-            return state.set(payload.rowIndex,
-                state.get(payload.rowIndex)
+            return state.set('' + payload.rowIndex,
+                state.get('' + payload.rowIndex)
                     .set(payload.columnIndex, payload.symbol)
             );
 
