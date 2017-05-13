@@ -166,7 +166,7 @@ body {
     font: 30px/32px 'Helvetica Neue';
 }
 
-.message-text > .button-wrapper > .button.-next-game {
+.message-text > .button-wrapper > .button.-next-round {
     float: right;
 }
 
@@ -181,7 +181,7 @@ body {
     .message-text > .text {
         padding-bottom: 10px;
     }
-    .message-text > .button-wrapper > .button.-next-game {
+    .message-text > .button-wrapper > .button.-next-round {
         display: block;
         float: none;
     }

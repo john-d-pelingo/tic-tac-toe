@@ -42,12 +42,25 @@ describe('Square component', () => {
     });
 
     describe('New props', () => {
+        it('should return the same prop values', () => {
+            const newProps = {
+                ...defaultProps,
+                columnIndex: 1,
+                rowIndex: 2
+            };
+            const wrapper = shallow(<Square { ...newProps } />);
+
+            expect(wrapper.instance().props.columnIndex).toEqual(newProps.columnIndex);
+            expect(wrapper.instance().props.rowIndex).toEqual(newProps.rowIndex);
+        });
+    });
+
+    describe('Simulations', () => {
         it('should handle a click event', () => {
             sinon.spy(Square.prototype, '_handleSquareClick');
             const wrapper = mount(<Square { ...defaultProps } />);
             wrapper.find('.-square').simulate('click');
 
-            expect(Square.prototype._handleSquareClick).toHaveProperty('callCount', 1);
             expect(Square.prototype._handleSquareClick.calledOnce).toBe(true);
         });
     });

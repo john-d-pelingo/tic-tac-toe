@@ -19,7 +19,7 @@ class Square extends React.Component {
 
     _handleSquareClick() {
         const { columnIndex, rowIndex, handleSquareClick } = this.props;
-        handleSquareClick(columnIndex, rowIndex);
+        return handleSquareClick(columnIndex, rowIndex);
     }
 
     render() {

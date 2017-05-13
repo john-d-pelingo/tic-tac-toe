@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { DEFAULT_COLOR, ANDROID_COLOR, APPLE_COLOR } from '../../core/constants';
 
 const propTypes = {
-    winner: PropTypes.bool,
-    roundEndedAsDraw: PropTypes.bool
+    roundEndedAsDraw: PropTypes.bool,
+    winner: PropTypes.bool
 };
 
 const defaultProps = {

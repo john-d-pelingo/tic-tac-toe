@@ -113,7 +113,10 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 
 ## TODO 
 
+- [ ] Add round counter.
+- [ ] Add turn counter.
 - [ ] Change redux store of ticTacToe to game.
+- [ ] Refactor constants.
 - [ ] Styling:
   - [ ] Make SVG beside score "breath" too.
 - [ ] Complete tests for:
@@ -122,7 +125,7 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
     - [ ] Actions
     - [ ] Selectors
   - [ ] Containers
-  - [ ] Components
+  - [x] Components
 - [ ] Add snapshot testing.  
 
 ## License

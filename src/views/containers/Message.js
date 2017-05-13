@@ -27,17 +27,17 @@ export class Message extends React.Component {
         super(props);
 
         this.handleNextRoundClick = this.handleNextRoundClick.bind(this);
-        this.handleRestartGameCLick = this.handleRestartGameCLick.bind(this);
+        this.handleNewGameClick = this.handleNewGameClick.bind(this);
     }
 
     handleNextRoundClick(e) {
         e.preventDefault();
-        this.props.nextRound();
+        return this.props.nextRound();
     }
 
-    handleRestartGameCLick(e) {
+    handleNewGameClick(e) {
         e.preventDefault();
-        this.props.restartGame();
+        return this.props.restartGame();
     }
 
     render() {
@@ -45,12 +45,12 @@ export class Message extends React.Component {
         const { nextRound, restartGame, roundEndedAsDraw, winner, ...restMessageProps } = this.props;
 
         const handleNextRoundClick = this.handleNextRoundClick;
-        const handleRestartGameCLick = this.handleRestartGameCLick;
+        const handleNewGameClick = this.handleNewGameClick;
 
         const toSpread = {
             messageSpan: `It\u0027s ${ restMessageProps.currentPlayer }\u0027s turn.`,
             handleNextRoundClick,
-            handleRestartGameCLick,
+            handleNewGameClick,
             ...restMessageProps
         };
 
