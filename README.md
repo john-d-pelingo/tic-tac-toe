@@ -29,6 +29,7 @@ Try the demo at [https://john-d-pelingo.github.io/tic-tac-toe/](https://john-d-p
 
 - [x] enzyme
 - [x] jest
+- [x] redux-mock-store
 - [x] sinon
 
 ## Utilities

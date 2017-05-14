@@ -55,8 +55,8 @@ describe('Board actions', () => {
             ];
 
             store.dispatch(fillSquare());
-            const actions = store.getActions();
-            expect(actions).toEqual(action);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(action);
         });
     });
 
@@ -80,8 +80,8 @@ describe('Board actions', () => {
             const action = [];
 
             store.dispatch(play.call(ø, 0, 1));
-            const actions = store.getActions();
-            expect(actions).toEqual(action);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(action);
         });
 
         it('should create FILL_SQUARE', () => {
@@ -111,8 +111,8 @@ describe('Board actions', () => {
             ];
 
             store.dispatch(play.call(ø, 2, 2));
-            const actions = store.getActions();
-            expect(actions).toEqual(action);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(action);
         });
 
         it('should create FILL_SQUARE', () => {
@@ -141,8 +141,8 @@ describe('Board actions', () => {
             ];
 
             store.dispatch(play.call(ø, 0, 1));
-            const actions = store.getActions();
-            expect(actions).toEqual(action);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(action);
         });
 
         it('should create FILL_SQUARE and DECLARE_DRAW', () => {
@@ -160,7 +160,7 @@ describe('Board actions', () => {
                 }
             };
             store = mockStore(state);
-            const nextActions = [
+            const actions = [
                 {
                     type: FILL_SQUARE,
                     payload: {
@@ -173,8 +173,8 @@ describe('Board actions', () => {
             ];
 
             store.dispatch(play.call(ø, 0, 1));
-            const actions = store.getActions();
-            expect(actions).toEqual(nextActions);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(actions);
         });
 
         it(`should create FILL_SQUARE and DECLARE_WINNER for ${ CROSS }`, () => {
@@ -192,7 +192,7 @@ describe('Board actions', () => {
                 }
             };
             store = mockStore(state);
-            const nextActions = [
+            const actions = [
                 {
                     type: FILL_SQUARE,
                     payload: {
@@ -211,8 +211,8 @@ describe('Board actions', () => {
             ];
 
             store.dispatch(play.call(ø, 2, 1));
-            const actions = store.getActions();
-            expect(actions).toEqual(nextActions);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(actions);
         });
 
         it(`should create FILL_SQUARE and DECLARE_WINNER for ${ NOUGHT }`, () => {
@@ -230,7 +230,7 @@ describe('Board actions', () => {
                 }
             };
             store = mockStore(state);
-            const nextActions = [
+            const actions = [
                 {
                     type: FILL_SQUARE,
                     payload: {
@@ -249,8 +249,8 @@ describe('Board actions', () => {
             ];
 
             store.dispatch(play.call(ø, 2, 0));
-            const actions = store.getActions();
-            expect(actions).toEqual(nextActions);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(actions);
         });
     });
 

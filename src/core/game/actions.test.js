@@ -47,19 +47,19 @@ describe('Board actions', () => {
 
     describe('declareDraw', () => {
         it('should create DECLARE_DRAW', () => {
-            const action = [
+            const actions = [
                 { type: DECLARE_DRAW }
             ];
 
             store.dispatch(declareDraw());
-            const actions = store.getActions();
-            expect(actions).toEqual(action);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(actions);
         });
     });
 
     describe('declareWinner', () => {
         it('should create DECLARE_WINNER', () => {
-            const action = [
+            const actions = [
                 {
                     type: DECLARE_WINNER,
                     payload: {
@@ -70,32 +70,32 @@ describe('Board actions', () => {
             ];
 
             store.dispatch(declareWinner.call(ø, CROSS, [2, 5, 8]));
-            const actions = store.getActions();
-            expect(actions).toEqual(action);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(actions);
         });
     });
 
     describe('nextRound', () => {
         it('should create NEXT_ROUND', () => {
-            const action = [
+            const actions = [
                 { type: NEXT_ROUND }
             ];
 
             store.dispatch(nextRound());
-            const actions = store.getActions();
-            expect(actions).toEqual(action);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(actions);
         });
     });
 
     describe('restartGame', () => {
         it('should create RESTART_GAME', () => {
-            const action = [
+            const actions = [
                 { type: RESTART_GAME }
             ];
 
             store.dispatch(restartGame());
-            const actions = store.getActions();
-            expect(actions).toEqual(action);
+            const nextActions = store.getActions();
+            expect(nextActions).toEqual(actions);
         });
     });
 });
