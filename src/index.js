@@ -11,7 +11,6 @@ import './views/styles/style.css';
 
 const store = configureStore();
 
-// TODO: Ability to add custom username.
 ReactDOM.render(
     <Provider store={ store }>
         <App>

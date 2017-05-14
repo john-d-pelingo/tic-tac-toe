@@ -10,26 +10,10 @@ import {
     WINNING_LAYOUTS_KEYS,
     WINNING_LAYOUTS_LENGTH
 } from '../../core/constants';
-import { ticTacToeSelectors } from '../tic-tac-toe';
+import { gameActions, gameSelectors } from '../game';
 
 import * as actionTypes from './action-types';
 import { getLongBoard } from './selectors';
-
-export function declareDraw() {
-    return {
-        type: actionTypes.DECLARE_DRAW
-    };
-}
-
-export function declareWinner(winner, winningLayout) {
-    return {
-        type: actionTypes.DECLARE_WINNER,
-        payload: {
-            winner,
-            winningLayout
-        }
-    };
-}
 
 export function fillSquare(data) {
     return {
@@ -41,19 +25,19 @@ export function fillSquare(data) {
 export function play(columnIndex, rowIndex) {
     return (dispatch, getState) => {
         // If the round has not ended proceed with filling the square.
-        if (!ticTacToeSelectors.getRoundEnded(getState())) {
-            const currentPlayer = ticTacToeSelectors.getCurrentPlayer(getState());
+        if (!gameSelectors.getRoundEnded(getState())) {
+            const currentPlayer = gameSelectors.getCurrentPlayer(getState());
             dispatch(fillSquare({ columnIndex, rowIndex, symbol: currentPlayer }));
 
-            if (ticTacToeSelectors.getNumberOfMoves(getState()) > 4) {
+            if (gameSelectors.getNumberOfMoves(getState()) > 4) {
                 const check = checkBoard(getLongBoard(getState()));
                 switch (check.result) {
                     case 1:
-                        return dispatch(declareDraw());
+                        return dispatch(gameActions.declareDraw());
                     case 2:
-                        return dispatch(declareWinner(CROSS, check.winningLayout));
+                        return dispatch(gameActions.declareWinner(CROSS, check.winningLayout));
                     case 3:
-                        return dispatch(declareWinner(NOUGHT, check.winningLayout));
+                        return dispatch(gameActions.declareWinner(NOUGHT, check.winningLayout));
                     default:
                 }
             }

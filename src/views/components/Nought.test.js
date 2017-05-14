@@ -57,7 +57,7 @@ describe('Nought component', () => {
                 ...defaultProps,
                 roundEndedAsDraw: true
             };
-            
+
             expect(shallow(<Nought { ...newProps } />).find('path').props().fill).toEqual(ANDROID_COLOR);
         });
 
@@ -66,7 +66,7 @@ describe('Nought component', () => {
                 ...defaultProps,
                 winner: true
             };
-            
+
             expect(shallow(<Nought { ...newProps } />).find('path').props().fill).toEqual(APPLE_COLOR);
         });
     });

@@ -6,7 +6,7 @@ import { CROSS, NOUGHT } from '../constants';
 
 import * as actionTypes from './action-types';
 
-export const TicTacToeState = new Record({
+export const GameState = new Record({
     draw: null,
     end: false,
     moves: 0,
@@ -15,7 +15,7 @@ export const TicTacToeState = new Record({
     player: CROSS
 });
 
-export function ticTacToeReducer(state = new TicTacToeState(), { payload, type }) {
+export function gameReducer(state = new GameState(), { payload, type }) {
     switch (type) {
         case actionTypes.FILL_SQUARE:
             return state.merge({
@@ -24,10 +24,14 @@ export function ticTacToeReducer(state = new TicTacToeState(), { payload, type }
             });
 
         case actionTypes.DECLARE_DRAW:
-            return state.set('draw', true);
+            return state.merge({
+                'end': true,
+                'draw': true
+            });
 
         case actionTypes.DECLARE_WINNER:
             return state.merge({
+                'draw': false,
                 'end': true,
                 'winner': payload.winner,
                 'winningLayout': payload.winningLayout
@@ -35,7 +39,7 @@ export function ticTacToeReducer(state = new TicTacToeState(), { payload, type }
 
         case actionTypes.NEXT_ROUND:
         case actionTypes.RESTART_GAME:
-            return new TicTacToeState();
+            return new GameState();
 
         default:
             return state;

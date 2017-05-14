@@ -6,12 +6,39 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes breathing {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .app {
     text-align: center;
 }
 
 .app .logo {
-    animation: app-logo-spin infinite 20s linear;
+    animation: spin infinite 20s linear;
     height: 80px;
 }
 
@@ -37,15 +64,6 @@ body {
         max-width: 100%;
         padding: 20px;
         width: 100%;
-    }
-}
-
-@keyframes app-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
     }
 }
 
@@ -130,24 +148,6 @@ body {
     margin: 0;
 }
 
-@keyframes breathing {
-    0% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(1.5);
-    }
-    50% {
-        transform: scale(1);
-    }
-    75% {
-        transform: scale(1.5);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 .message-text {
     padding-bottom: 20px;
 }
@@ -194,6 +194,7 @@ body {
 .symbol {
     background-color: white;
     border: 1px solid black;
+    cursor: default;
     height: 75px;
     margin: 1px;
     transition: background-color .5s ease;

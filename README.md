@@ -4,7 +4,7 @@ Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react and redux and friends. B
                                                  
 Try the demo at [https://john-d-pelingo.github.io/tic-tac-toe/](https://john-d-pelingo.github.io/tic-tac-toe/).
 
-## Stack
+## Application Stack
 
 - [x] immutable
 - [x] prop-types
@@ -29,6 +29,7 @@ Try the demo at [https://john-d-pelingo.github.io/tic-tac-toe/](https://john-d-p
 
 - [x] enzyme
 - [x] jest
+- [x] sinon
 
 ## Utilities
 
@@ -110,23 +111,6 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request! :D
-
-## TODO 
-
-- [ ] Add round counter.
-- [ ] Add turn counter.
-- [ ] Change redux store of ticTacToe to game.
-- [ ] Refactor constants.
-- [ ] Styling:
-  - [ ] Make SVG beside score "breath" too.
-- [ ] Complete tests for:
-  - [ ] Redux Logic
-    - [ ] Reducers
-    - [ ] Actions
-    - [ ] Selectors
-  - [ ] Containers
-  - [x] Components
-- [ ] Add snapshot testing.  
 
 ## License
 

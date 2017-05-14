@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { ticTacToeActions, ticTacToeSelectors } from '../../core/tic-tac-toe';
+import { gameActions, gameSelectors } from '../../core/game';
 
 import { MessageText } from '../components';
 
@@ -72,9 +72,9 @@ Message.propTypes = propTypes;
 Message.defaultProps = defaultProps;
 
 const mapStateToProps = createSelector(
-    ticTacToeSelectors.getRoundEndedAsDraw,
-    ticTacToeSelectors.getCurrentPlayer,
-    ticTacToeSelectors.getWinner,
+    gameSelectors.getRoundEndedAsDraw,
+    gameSelectors.getCurrentPlayer,
+    gameSelectors.getWinner,
     (roundEndedAsDraw, currentPlayer, winner) => ({
         roundEndedAsDraw,
         currentPlayer,
@@ -83,22 +83,22 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    nextRound: ticTacToeActions.nextRound,
-    restartGame: ticTacToeActions.restartGame
+    nextRound: gameActions.nextRound,
+    restartGame: gameActions.restartGame
 }, dispatch);
 
 // Or simply:
 // const mapDispatchToProps = {
-//     nextRound: ticTacToeActions.nextRound,
-//     restartGame: ticTacToeActions.restartGame
+//     nextRound: gameActions.nextRound,
+//     restartGame: gameActions.restartGame
 // };
 
 // To connect the dispatch method to the component's props though unnecessary:
 // function mapDispatchToProps(dispatch)  {
 //     return {
 //         ...bindActionCreators({
-//             nextRound: ticTacToeActions.nextRound,
-//             restartGame: ticTacToeActions.restartGame
+//             nextRound: gameActions.nextRound,
+//             restartGame: gameActions.restartGame
 //         }),
 //         dispatch
 //     };

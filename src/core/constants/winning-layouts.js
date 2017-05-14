@@ -1,12 +1,3 @@
-export const BOARD_SIZE = 9;
-
-export const CROSS = 'Android';
-export const NOUGHT = 'iOS';
-
-export const DEFAULT_COLOR = '#000';
-export const ANDROID_COLOR = '#a4c639';
-export const APPLE_COLOR = '#a8b1b8';
-
 // export const WINNING_LAYOUTS = [
 //     [0, 1, 2], // 1st row.
 //     [3, 4, 5], // 2nd row.
