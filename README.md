@@ -19,11 +19,11 @@ Try the demo at [https://john-d-pelingo.github.io/tic-tac-toe/](https://john-d-p
 ## Development Stack
 
 - [x] cross-env
-- [x] del-cli
 - [x] eslint
 - [x] gh-pages
 - [x] node-sass
 - [x] npm-run-all
+- [x] rimraf
 
 ## Test Stack 
 
