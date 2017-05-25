@@ -9,6 +9,8 @@ import { BoardContainer, MessageContainer, ScoresContainer } from './views/conta
 // Styles.
 import './views/styles/style.css';
 
+import registerServiceWorker from './registerServiceWorker';
+
 const store = configureStore();
 
 ReactDOM.render(
@@ -21,3 +23,5 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+registerServiceWorker();

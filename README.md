@@ -1,3 +1,9 @@
+[![travis-ci][travis-badge]][travis-url]
+[![circle-ci][circle-ci-badge]][circle-ci-url]
+[![appveyor-ci][appveyor-ci-badge]][appveyor-ci-url]
+[![dependency-ci][dependency-ci-badge]][dependency-ci-url]
+[![coveralls][coveralls-badge]][coveralls-url]
+
 # tic-tac-toe
 
 Tic-Tac-Toe (or Cross and Noughts) 3x3 built with react and redux and friends. Bootstrapped with the help of Facebook's create-react-app.
@@ -18,10 +24,13 @@ Try the demo at [https://john-d-pelingo.github.io/tic-tac-toe/](https://john-d-p
 
 ## Development Stack
 
+- [x] coveralls
 - [x] cross-env
 - [x] eslint
 - [x] gh-pages
+- [x] fs-extra
 - [x] node-sass
+- [x] nodemon
 - [x] npm-run-all
 - [x] rimraf
 
@@ -116,3 +125,14 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 ## License
 
 [MIT](https://github.com/john-d-pelingo/tic-tac-toe/blob/master/LICENSE) &copy; 2017-present
+
+[travis-badge]: https://travis-ci.org/john-d-pelingo/tic-tac-toe.svg?branch=master
+[travis-url]: https://travis-ci.org/john-d-pelingo/tic-tac-toe
+[circle-ci-badge]: https://circleci.com/gh/john-d-pelingo/tic-tac-toe.svg?style=shield
+[circle-ci-url]: https://circleci.com/gh/john-d-pelingo/tic-tac-toe
+[appveyor-ci-badge]: https://ci.appveyor.com/api/projects/status/t31m7f95tl7xbbuu?svg=true
+[appveyor-ci-url]: https://ci.appveyor.com/project/john-d-pelingo/tic-tac-toe
+[dependency-ci-badge]: https://dependencyci.com/github/john-d-pelingo/tic-tac-toe/badge
+[dependency-ci-url]: https://dependencyci.com/github/john-d-pelingo/tic-tac-toe
+[coveralls-badge]: https://coveralls.io/repos/github/john-d-pelingo/tic-tac-toe/badge.svg
+[coveralls-url]: https://coveralls.io/github/john-d-pelingo/tic-tac-toe
