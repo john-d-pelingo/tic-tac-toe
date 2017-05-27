@@ -14,14 +14,14 @@ import registerServiceWorker from './registerServiceWorker';
 const store = configureStore();
 
 ReactDOM.render(
-    <Provider store={ store }>
-        <App>
-            <MessageContainer />
-            <ScoresContainer />
-            <BoardContainer />
-        </App>
-    </Provider>,
-    document.getElementById('root')
+  <Provider store={ store }>
+    <App>
+      <MessageContainer />
+      <ScoresContainer />
+      <BoardContainer />
+    </App>
+  </Provider>,
+  document.getElementById('root')
 );
 
 registerServiceWorker();

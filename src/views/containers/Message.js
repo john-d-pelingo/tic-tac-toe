@@ -9,82 +9,82 @@ import { gameActions, gameSelectors } from '../../core/game';
 import { MessageText } from '../components';
 
 const propTypes = {
-    roundEndedAsDraw: PropTypes.bool,
-    currentPlayer: PropTypes.string.isRequired,
-    winner: PropTypes.string,
+  roundEndedAsDraw: PropTypes.bool,
+  currentPlayer: PropTypes.string.isRequired,
+  winner: PropTypes.string,
 
-    nextRound: PropTypes.func.isRequired,
-    restartGame: PropTypes.func.isRequired
+  nextRound: PropTypes.func.isRequired,
+  restartGame: PropTypes.func.isRequired
 };
 
 const defaultProps = {
-    roundEndedAsDraw: 'false',
-    winner: ''
+  roundEndedAsDraw: 'false',
+  winner: ''
 };
 
 export class Message extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.handleNextRoundClick = this.handleNextRoundClick.bind(this);
-        this.handleNewGameClick = this.handleNewGameClick.bind(this);
+    this.handleNextRoundClick = this.handleNextRoundClick.bind(this);
+    this.handleNewGameClick = this.handleNewGameClick.bind(this);
+  }
+
+  handleNextRoundClick(e) {
+    e.preventDefault();
+    return this.props.nextRound();
+  }
+
+  handleNewGameClick(e) {
+    e.preventDefault();
+    return this.props.restartGame();
+  }
+
+  render() {
+    // eslint-disable-next-line
+    const { nextRound, restartGame, roundEndedAsDraw, winner, ...restMessageProps } = this.props;
+
+    const handleNextRoundClick = this.handleNextRoundClick;
+    const handleNewGameClick = this.handleNewGameClick;
+
+    const toSpread = {
+      messageSpan: `It\u0027s ${ restMessageProps.currentPlayer }\u0027s turn.`,
+      handleNextRoundClick,
+      handleNewGameClick,
+      ...restMessageProps
+    };
+
+    if (roundEndedAsDraw) {
+      toSpread.messageSpan = 'Draw!';
     }
 
-    handleNextRoundClick(e) {
-        e.preventDefault();
-        return this.props.nextRound();
+    if (winner) {
+      toSpread.messageSpan = `${ winner } won this round!`;
     }
 
-    handleNewGameClick(e) {
-        e.preventDefault();
-        return this.props.restartGame();
-    }
-
-    render() {
-        // eslint-disable-next-line
-        const { nextRound, restartGame, roundEndedAsDraw, winner, ...restMessageProps } = this.props;
-
-        const handleNextRoundClick = this.handleNextRoundClick;
-        const handleNewGameClick = this.handleNewGameClick;
-
-        const toSpread = {
-            messageSpan: `It\u0027s ${ restMessageProps.currentPlayer }\u0027s turn.`,
-            handleNextRoundClick,
-            handleNewGameClick,
-            ...restMessageProps
-        };
-
-        if (roundEndedAsDraw) {
-            toSpread.messageSpan = 'Draw!';
-        }
-
-        if (winner) {
-            toSpread.messageSpan = `${ winner } won this round!`;
-        }
-
-        return (
-            <MessageText { ...toSpread } />
-        );
-    }
+    return (
+      <MessageText { ...toSpread } />
+    );
+  }
 }
 
 Message.propTypes = propTypes;
 Message.defaultProps = defaultProps;
 
 const mapStateToProps = createSelector(
-    gameSelectors.getRoundEndedAsDraw,
-    gameSelectors.getCurrentPlayer,
-    gameSelectors.getWinner,
-    (roundEndedAsDraw, currentPlayer, winner) => ({
-        roundEndedAsDraw,
-        currentPlayer,
-        winner
-    })
+  gameSelectors.getRoundEndedAsDraw,
+  gameSelectors.getCurrentPlayer,
+  gameSelectors.getWinner,
+  (roundEndedAsDraw, currentPlayer, winner) => ({
+    roundEndedAsDraw,
+    currentPlayer,
+    winner
+  })
 );
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    nextRound: gameActions.nextRound,
-    restartGame: gameActions.restartGame
+  nextRound: gameActions.nextRound,
+  restartGame: gameActions.restartGame
 }, dispatch);
 
 // Or simply:

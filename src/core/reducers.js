@@ -5,7 +5,7 @@ import { scoresReducer } from './scores';
 import { gameReducer } from './game';
 
 export default combineReducers({
-    board: boardReducer,
-    scores: scoresReducer,
-    game: gameReducer
+  board: boardReducer,
+  scores: scoresReducer,
+  game: gameReducer
 });

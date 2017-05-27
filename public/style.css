@@ -1,50 +1,50 @@
 .section {
-    display    : block;
-    text-align : center;
+  display    : block;
+  text-align : center;
 }
 
 .loading-wrapper {
-    font    : 50px/54px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    padding : 100px 0;
+  font    : 50px/54px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding : 100px 0;
 }
 
 .loading-wrapper .dot {
-    animation-duration        : 1.4s;
-    animation-iteration-count : infinite;
-    animation-name            : blink;
-    display                   : inline-block;
-    font-size                 : 50px;
-    animation-fill-mode       : both;
+  animation-duration        : 1.4s;
+  animation-iteration-count : infinite;
+  animation-name            : blink;
+  display                   : inline-block;
+  font-size                 : 50px;
+  animation-fill-mode       : both;
 }
 
 .loading-wrapper .dot:nth-child(2) {
-    animation-delay : .2s;
+  animation-delay : .2s;
 }
 
 .loading-wrapper .dot:nth-child(3) {
-    animation-delay : .4s;
+  animation-delay : .4s;
 }
 
 @-webkit-keyframes blink {
-    0% {
-        opacity : .2;
-    }
-    20% {
-        opacity : 1;
-    }
-    100% {
-        opacity : .2;
-    }
+  0% {
+    opacity : .2;
+  }
+  20% {
+    opacity : 1;
+  }
+  100% {
+    opacity : .2;
+  }
 }
 
 @keyframes blink {
-    0% {
-        opacity : .2;
-    }
-    20% {
-        opacity : 1;
-    }
-    100% {
-        opacity : .2;
-    }
+  0% {
+    opacity : .2;
+  }
+  20% {
+    opacity : 1;
+  }
+  100% {
+    opacity : .2;
+  }
 }
