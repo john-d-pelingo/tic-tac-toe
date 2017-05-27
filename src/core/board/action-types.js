@@ -4,4 +4,4 @@ export {
   FILL_SQUARE,
   NEXT_ROUND,
   RESTART_GAME
-} from '../common-actions';
+} from 'core/common-actions';

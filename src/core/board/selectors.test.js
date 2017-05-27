@@ -1,6 +1,6 @@
 import { List } from 'immutable';
 
-import { CROSS, NOUGHT } from '../../core/constants';
+import { CROSS, NOUGHT } from 'core/constants';
 
 import { boardState } from './reducer';
 import { getBoardAsObjAndArr, getLongBoard } from './selectors';

@@ -4,9 +4,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { gameActions, gameSelectors } from '../../core/game';
+import { gameActions, gameSelectors } from 'core/game';
 
-import { MessageText } from '../components';
+import { MessageText } from 'views/components';
 
 const propTypes = {
   roundEndedAsDraw: PropTypes.bool,

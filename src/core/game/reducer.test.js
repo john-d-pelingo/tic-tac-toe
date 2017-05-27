@@ -1,4 +1,4 @@
-import { CROSS, NOUGHT } from '../../core/constants';
+import { CROSS, NOUGHT } from 'core/constants';
 
 import { gameReducer, GameState } from './reducer';
 import {

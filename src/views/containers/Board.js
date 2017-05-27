@@ -8,10 +8,10 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import shortid from 'shortid';
 
-import { Cross, Nought, Square } from '../components';
-import { gameSelectors } from '../../core/game';
-import { boardActions, boardSelectors } from '../../core/board';
-import { CROSS, NOUGHT } from '../../core/constants';
+import { Cross, Nought, Square } from 'views/components';
+import { gameSelectors } from 'core/game';
+import { boardActions, boardSelectors } from 'core/board';
+import { CROSS, NOUGHT } from 'core/constants';
 
 const propTypes = {
   board: PropTypes.object.isRequired,

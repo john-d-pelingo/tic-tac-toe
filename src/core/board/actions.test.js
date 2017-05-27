@@ -2,7 +2,7 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { List, Map } from 'immutable';
 
-import { CROSS, NOUGHT } from '../../core/constants';
+import { CROSS, NOUGHT } from 'core/constants';
 
 import { boardState } from './reducer';
 import {

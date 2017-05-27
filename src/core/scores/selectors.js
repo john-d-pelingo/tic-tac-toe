@@ -1,4 +1,4 @@
-import { CROSS, NOUGHT } from '../constants';
+import { CROSS, NOUGHT } from 'core/constants';
 
 export function getScores(state) {
   return state.scores;

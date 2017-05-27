@@ -2,7 +2,7 @@
 
 import { Record } from 'immutable';
 
-import { CROSS, NOUGHT } from '../constants';
+import { CROSS, NOUGHT } from 'core/constants';
 
 import * as actionTypes from './action-types';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { DEFAULT_COLOR, ANDROID_COLOR, APPLE_COLOR } from '../../core/constants';
+import { DEFAULT_COLOR, ANDROID_COLOR, APPLE_COLOR } from 'core/constants';
 
 const propTypes = {
   roundEndedAsDraw: PropTypes.bool,

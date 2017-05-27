@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import logo from '../images/logo.svg';
+import logo from 'static/media/images/logo.svg';
 
 const propTypes = {
   children: PropTypes.node.isRequired

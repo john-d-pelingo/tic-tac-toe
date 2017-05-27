@@ -1,7 +1,7 @@
 import configureStore from 'redux-mock-store';
 import { List, Map, Repeat } from 'immutable';
 
-import { CROSS } from '../../core/constants';
+import { CROSS } from 'core/constants';
 
 import { GameState } from './reducer';
 import {

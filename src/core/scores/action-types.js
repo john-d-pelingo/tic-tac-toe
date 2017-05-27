@@ -2,4 +2,4 @@ export {
   DECLARE_DRAW,
   DECLARE_WINNER,
   RESTART_GAME
-} from '../common-actions';
+} from 'core/common-actions';

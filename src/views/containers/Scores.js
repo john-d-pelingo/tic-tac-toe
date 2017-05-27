@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { CROSS, NOUGHT } from '../../core/constants';
-import { scoresSelectors } from '../../core/scores';
-import { gameSelectors } from '../../core/game';
-import { Cross, Nought } from '../components';
+import { CROSS, NOUGHT } from 'core/constants';
+import { scoresSelectors } from 'core/scores';
+import { gameSelectors } from 'core/game';
+import { Cross, Nought } from 'views/components';
 
 const propTypes = {
   crossScore: PropTypes.number.isRequired,

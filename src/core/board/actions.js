@@ -9,8 +9,8 @@ import {
   WINNING_LAYOUTS,
   WINNING_LAYOUTS_KEYS,
   WINNING_LAYOUTS_LENGTH
-} from '../../core/constants';
-import { gameActions, gameSelectors } from '../game';
+} from 'core/constants';
+import { gameActions, gameSelectors } from 'core/game';
 
 import * as actionTypes from './action-types';
 import { getLongBoard } from './selectors';

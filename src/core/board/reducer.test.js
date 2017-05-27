@@ -1,6 +1,6 @@
 import { List } from 'immutable';
 
-import { CROSS, NOUGHT } from '../../core/constants';
+import { CROSS, NOUGHT } from 'core/constants';
 
 import { boardReducer, boardState } from './reducer';
 import {

@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { DEFAULT_COLOR, ANDROID_COLOR, APPLE_COLOR } from '../../core/constants';
+import { DEFAULT_COLOR, ANDROID_COLOR, APPLE_COLOR } from 'core/constants';
 
 import Cross from './Cross';
 
