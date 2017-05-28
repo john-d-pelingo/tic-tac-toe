@@ -135,7 +135,7 @@ feature. However we understand that this tool wouldn’t be useful if you couldn
 [appveyor-ci-url]: https://ci.appveyor.com/project/john-d-pelingo/tic-tac-toe
 [dependency-ci-badge]: https://dependencyci.com/github/john-d-pelingo/tic-tac-toe/badge
 [dependency-ci-url]: https://dependencyci.com/github/john-d-pelingo/tic-tac-toe
-[coveralls-badge]: https://coveralls.io/repos/github/john-d-pelingo/tic-tac-toe/badge.svg
-[coveralls-url]: https://coveralls.io/github/john-d-pelingo/tic-tac-toe
+[coveralls-badge]: https://coveralls.io/repos/github/john-d-pelingo/tic-tac-toe/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/john-d-pelingo/tic-tac-toe?branch=master
 [mit-license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg
 [mit-license-url]: https://github.com/john-d-pelingo/tic-tac-toe/blob/master/LICENSE

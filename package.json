@@ -91,6 +91,8 @@
       "!src/*.js",
       "!src/core/*.js",
       "!src/core/**/index.js",
+      "!src/core/game/selectors.js",
+      "!src/core/scores/selectors.js",
       "!src/views/**/index.js",
       "!<rootDir>/node_modules/"
     ]

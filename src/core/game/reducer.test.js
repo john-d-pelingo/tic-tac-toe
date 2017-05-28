@@ -140,4 +140,15 @@ describe('Board reducer', () => {
       expect(nextState).toEqual(initialState);
     });
   });
+
+  describe('unknown action', () => {
+    it('should return the same state', () => {
+      const nextState = gameReducer(undefined, {
+        type: 'MAKE_COFFEE',
+        payload: {}
+      });
+
+      expect(nextState).toEqual(initialState);
+    });
+  });
 });

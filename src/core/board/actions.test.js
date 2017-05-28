@@ -145,6 +145,37 @@ describe('Board actions', () => {
       expect(nextActions).toEqual(action);
     });
 
+    it('should only create FILL_SQUARE when the moves are less than 5', () => {
+      const state = {
+        ...initialState,
+        board: new Map({
+          0: List([CROSS, '', NOUGHT]),
+          1: List(['', '', '']),
+          2: List([CROSS, '', ''])
+        }),
+        game: {
+          ...initialState.game,
+          moves: 3,
+          player: NOUGHT
+        }
+      };
+      store = mockStore(state);
+      const action = [
+        {
+          type: FILL_SQUARE,
+          payload: {
+            columnIndex: 0,
+            rowIndex: 1,
+            symbol: NOUGHT
+          }
+        }
+      ];
+
+      store.dispatch(play.call(ø, 0, 1));
+      const nextActions = store.getActions();
+      expect(nextActions).toEqual(action);
+    });
+
     it('should create FILL_SQUARE and DECLARE_DRAW', () => {
       const state = {
         ...initialState,
