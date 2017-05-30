@@ -42,7 +42,7 @@ export const Scores = ({ crossScore, noughtScore, drawScore, roundEndedAsDraw, w
 Scores.propTypes = propTypes;
 Scores.defaultProps = defaultProps;
 
-const mapStateToProps = createSelector(
+export const mapStateToProps = createSelector(
   scoresSelectors.getCrossScore,
   scoresSelectors.getDrawScore,
   scoresSelectors.getNoughtScore,
