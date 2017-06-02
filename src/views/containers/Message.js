@@ -71,7 +71,7 @@ export class Message extends React.Component {
 Message.propTypes = propTypes;
 Message.defaultProps = defaultProps;
 
-const mapStateToProps = createSelector(
+export const mapStateToProps = createSelector(
   gameSelectors.getRoundEndedAsDraw,
   gameSelectors.getCurrentPlayer,
   gameSelectors.getWinner,

@@ -70,7 +70,7 @@ export class Board extends React.Component {
 Board.propTypes = propTypes;
 Board.defaultProps = defaultProps;
 
-const mapStateToProps = createSelector(
+export const mapStateToProps = createSelector(
   boardSelectors.getBoardAsObjAndArr,
   gameSelectors.getRoundEnded,
   gameSelectors.getRoundEndedAsDraw,
