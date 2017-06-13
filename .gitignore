@@ -2,23 +2,39 @@
 
 # Custom #
 
-# Trusted #
-.env
 
-# Dependencies #
-/node_modules
-
-# Testing #
-/coverage
 
 # Production #
 /build
 # /public
 
+
+
+# Miscellaneous #
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+
+# Dependencies #
+/node_modules
+
+
+
+# Testing #
+/coverage
+
+
+
 # Editors #
 .idea
 .project
 *.iml
+
+
 
 # Logs #
 logs
@@ -27,10 +43,14 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+
+
 # Runtime data #
 pids
 *.pid
 *.seed
+
+
 
 # OS generated files #
 ._*
